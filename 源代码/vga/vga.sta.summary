@@ -1,0 +1,109 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Setup 'clk25MHz'
+Slack : -10.053
+TNS   : -152.900
+
+Type  : Setup 'ms1[0]'
+Slack : -8.368
+TNS   : -31.547
+
+Type  : Setup 'main_entity:i_main_entity|clk25MHz'
+Slack : -6.518
+TNS   : -547.934
+
+Type  : Setup 'vga640480:i_vga640480|vcnt[0]'
+Slack : -4.253
+TNS   : -94.036
+
+Type  : Setup 'receiver:i_receiver|receive_flag'
+Slack : -3.881
+TNS   : -22.361
+
+Type  : Setup 'clk50MHz'
+Slack : -3.030
+TNS   : -36.685
+
+Type  : Setup 'COLOR:UU|FS[3]'
+Slack : -2.775
+TNS   : -9.513
+
+Type  : Setup 'changesignal[0]'
+Slack : -2.324
+TNS   : -5.484
+
+Type  : Setup 'COLOR:UU|CC[4]'
+Slack : -1.990
+TNS   : -13.164
+
+Type  : Setup 'MODE'
+Slack : -0.999
+TNS   : -0.999
+
+Type  : Setup 'clk12MHz'
+Slack : -0.727
+TNS   : -1.948
+
+Type  : Setup 'MS'
+Slack : -0.609
+TNS   : -1.029
+
+Type  : Setup 'MD1'
+Slack : -0.019
+TNS   : -0.019
+
+Type  : Hold 'ms1[0]'
+Slack : -1.705
+TNS   : -5.923
+
+Type  : Hold 'clk50MHz'
+Slack : -0.409
+TNS   : -1.186
+
+Type  : Hold 'clk25MHz'
+Slack : -0.096
+TNS   : -0.261
+
+Type  : Hold 'COLOR:UU|FS[3]'
+Slack : -0.065
+TNS   : -0.256
+
+Type  : Hold 'receiver:i_receiver|receive_flag'
+Slack : -0.048
+TNS   : -0.048
+
+Type  : Hold 'MS'
+Slack : 0.052
+TNS   : 0.000
+
+Type  : Hold 'clk12MHz'
+Slack : 0.054
+TNS   : 0.000
+
+Type  : Hold 'changesignal[0]'
+Slack : 0.154
+TNS   : 0.000
+
+Type  : Hold 'vga640480:i_vga640480|vcnt[0]'
+Slack : 0.234
+TNS   : 0.000
+
+Type  : Hold 'main_entity:i_main_entity|clk25MHz'
+Slack : 0.392
+TNS   : 0.000
+
+Type  : Hold 'MD1'
+Slack : 0.453
+TNS   : 0.000
+
+Type  : Hold 'MODE'
+Slack : 0.465
+TNS   : 0.000
+
+Type  : Hold 'COLOR:UU|CC[4]'
+Slack : 0.790
+TNS   : 0.000
+
+------------------------------------------------------------

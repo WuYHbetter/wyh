@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Mon Sep 09 14:28:13 2019
+Quartus II Version : 8.1 Build 163 10/28/2008 SJ Full Version
+Revision Name : vga
+Top-level Entity Name : img
+Family : Cyclone III
+Total logic elements : 717
+    Total combinational functions : 717
+    Dedicated logic registers : 206
+Total registers : 206
+Total pins : 21
+Total virtual pins : 0
+Total memory bits : 61,952
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0

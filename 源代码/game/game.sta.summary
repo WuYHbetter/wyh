@@ -1,0 +1,173 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'clk25MHz'
+Slack : -8.328
+TNS   : -549.035
+
+Type  : Slow 1200mV 85C Model Setup 'VGA:vga1|clk2'
+Slack : -5.950
+TNS   : -59.881
+
+Type  : Slow 1200mV 85C Model Setup 'vga640480:i_vga640480|vcnt[1]'
+Slack : -4.345
+TNS   : -51.983
+
+Type  : Slow 1200mV 85C Model Setup 'receiver:i_receiver|receive_flag'
+Slack : -3.924
+TNS   : -25.775
+
+Type  : Slow 1200mV 85C Model Setup 'VGA:vga1|clk1'
+Slack : -1.935
+TNS   : -10.445
+
+Type  : Slow 1200mV 85C Model Setup 'clk50MHz'
+Slack : -1.835
+TNS   : -25.225
+
+Type  : Slow 1200mV 85C Model Setup 'XIHAO:xihao1|CounterY1[0]'
+Slack : -1.153
+TNS   : -1.153
+
+Type  : Slow 1200mV 85C Model Hold 'clk25MHz'
+Slack : -0.973
+TNS   : -5.968
+
+Type  : Slow 1200mV 85C Model Hold 'clk50MHz'
+Slack : -0.342
+TNS   : -1.067
+
+Type  : Slow 1200mV 85C Model Hold 'VGA:vga1|clk1'
+Slack : -0.326
+TNS   : -0.326
+
+Type  : Slow 1200mV 85C Model Hold 'vga640480:i_vga640480|vcnt[1]'
+Slack : 0.275
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'XIHAO:xihao1|CounterY1[0]'
+Slack : 0.335
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'VGA:vga1|clk2'
+Slack : 0.775
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'receiver:i_receiver|receive_flag'
+Slack : 0.908
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Setup 'clk25MHz'
+Slack : -7.491
+TNS   : -503.437
+
+Type  : Slow 1200mV 0C Model Setup 'VGA:vga1|clk2'
+Slack : -5.406
+TNS   : -54.637
+
+Type  : Slow 1200mV 0C Model Setup 'vga640480:i_vga640480|vcnt[1]'
+Slack : -4.021
+TNS   : -47.719
+
+Type  : Slow 1200mV 0C Model Setup 'receiver:i_receiver|receive_flag'
+Slack : -3.639
+TNS   : -23.771
+
+Type  : Slow 1200mV 0C Model Setup 'VGA:vga1|clk1'
+Slack : -1.692
+TNS   : -8.745
+
+Type  : Slow 1200mV 0C Model Setup 'clk50MHz'
+Slack : -1.602
+TNS   : -21.873
+
+Type  : Slow 1200mV 0C Model Setup 'XIHAO:xihao1|CounterY1[0]'
+Slack : -1.020
+TNS   : -1.020
+
+Type  : Slow 1200mV 0C Model Hold 'clk25MHz'
+Slack : -0.845
+TNS   : -6.210
+
+Type  : Slow 1200mV 0C Model Hold 'clk50MHz'
+Slack : -0.323
+TNS   : -0.372
+
+Type  : Slow 1200mV 0C Model Hold 'VGA:vga1|clk1'
+Slack : -0.202
+TNS   : -0.202
+
+Type  : Slow 1200mV 0C Model Hold 'XIHAO:xihao1|CounterY1[0]'
+Slack : 0.289
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'vga640480:i_vga640480|vcnt[1]'
+Slack : 0.312
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'VGA:vga1|clk2'
+Slack : 0.723
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'receiver:i_receiver|receive_flag'
+Slack : 0.772
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'clk25MHz'
+Slack : -3.025
+TNS   : -118.912
+
+Type  : Fast 1200mV 0C Model Setup 'VGA:vga1|clk2'
+Slack : -2.086
+TNS   : -19.854
+
+Type  : Fast 1200mV 0C Model Setup 'vga640480:i_vga640480|vcnt[1]'
+Slack : -1.375
+TNS   : -10.972
+
+Type  : Fast 1200mV 0C Model Setup 'receiver:i_receiver|receive_flag'
+Slack : -1.119
+TNS   : -7.254
+
+Type  : Fast 1200mV 0C Model Setup 'XIHAO:xihao1|CounterY1[0]'
+Slack : -0.299
+TNS   : -0.299
+
+Type  : Fast 1200mV 0C Model Setup 'VGA:vga1|clk1'
+Slack : -0.241
+TNS   : -0.551
+
+Type  : Fast 1200mV 0C Model Setup 'clk50MHz'
+Slack : -0.210
+TNS   : -1.740
+
+Type  : Fast 1200mV 0C Model Hold 'clk25MHz'
+Slack : -0.562
+TNS   : -7.497
+
+Type  : Fast 1200mV 0C Model Hold 'clk50MHz'
+Slack : -0.332
+TNS   : -3.620
+
+Type  : Fast 1200mV 0C Model Hold 'VGA:vga1|clk1'
+Slack : -0.318
+TNS   : -0.318
+
+Type  : Fast 1200mV 0C Model Hold 'vga640480:i_vga640480|vcnt[1]'
+Slack : -0.050
+TNS   : -0.151
+
+Type  : Fast 1200mV 0C Model Hold 'XIHAO:xihao1|CounterY1[0]'
+Slack : 0.138
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'VGA:vga1|clk2'
+Slack : 0.312
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'receiver:i_receiver|receive_flag'
+Slack : 0.396
+TNS   : 0.000
+
+------------------------------------------------------------

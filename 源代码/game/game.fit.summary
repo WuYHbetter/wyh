@@ -1,0 +1,16 @@
+Fitter Status : Successful - Sat Sep 21 10:06:11 2019
+Quartus II Version : 8.1 Build 163 10/28/2008 SJ Full Version
+Revision Name : game
+Top-level Entity Name : game
+Family : Cyclone III
+Device : EP3C40Q240C8
+Timing Models : Final
+Total logic elements : 552 / 39,600 ( 1 % )
+    Total combinational functions : 533 / 39,600 ( 1 % )
+    Dedicated logic registers : 165 / 39,600 ( < 1 % )
+Total registers : 165
+Total pins : 9 / 129 ( 7 % )
+Total virtual pins : 0
+Total memory bits : 442,368 / 1,161,216 ( 38 % )
+Embedded Multiplier 9-bit elements : 0 / 252 ( 0 % )
+Total PLLs : 0 / 4 ( 0 % )

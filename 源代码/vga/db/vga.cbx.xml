@@ -1,0 +1,11 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="vga">
+		<CBX_INST_ENTRY INSTANCE_NAME="|IMG|hfut:i_rom|altsyncram:altsyncram_component" CBX_FILE_NAME="altsyncram_v491.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|IMG|main_entity:i_main_entity|ram_test:r11|altsyncram:altsyncram_component" CBX_FILE_NAME="altsyncram_len1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|IMG|main_entity:i_main_entity|ram_test:r22|altsyncram:altsyncram_component" CBX_FILE_NAME="altsyncram_len1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|IMG|main_entity:i_main_entity|ram_test:r33|altsyncram:altsyncram_component" CBX_FILE_NAME="altsyncram_len1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|IMG|main_entity:i_main_entity|ram_test:r44|altsyncram:altsyncram_component" CBX_FILE_NAME="altsyncram_len1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|img|main_entity:i_main_entity|signal_generator:s2|jieti:u4|altsyncram:Mux0_rtl_0" CBX_FILE_NAME="altsyncram_t6v.tdf"/>
+	</PROJECT>
+</LOG_ROOT>

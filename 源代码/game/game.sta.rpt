@@ -1,0 +1,1379 @@
+TimeQuest Timing Analyzer report for game
+Sat Sep 21 10:06:20 2019
+Quartus II Version 8.1 Build 163 10/28/2008 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Clocks
+  4. Slow 1200mV 85C Model Fmax Summary
+  5. Slow 1200mV 85C Model Setup Summary
+  6. Slow 1200mV 85C Model Hold Summary
+  7. Slow 1200mV 85C Model Recovery Summary
+  8. Slow 1200mV 85C Model Removal Summary
+  9. Slow 1200mV 85C Model Minimum Pulse Width
+ 10. Setup Times
+ 11. Hold Times
+ 12. Clock to Output Times
+ 13. Minimum Clock to Output Times
+ 14. Propagation Delay
+ 15. Minimum Propagation Delay
+ 16. Slow 1200mV 0C Model Fmax Summary
+ 17. Slow 1200mV 0C Model Setup Summary
+ 18. Slow 1200mV 0C Model Hold Summary
+ 19. Slow 1200mV 0C Model Recovery Summary
+ 20. Slow 1200mV 0C Model Removal Summary
+ 21. Slow 1200mV 0C Model Minimum Pulse Width
+ 22. Setup Times
+ 23. Hold Times
+ 24. Clock to Output Times
+ 25. Minimum Clock to Output Times
+ 26. Propagation Delay
+ 27. Minimum Propagation Delay
+ 28. Fast 1200mV 0C Model Setup Summary
+ 29. Fast 1200mV 0C Model Hold Summary
+ 30. Fast 1200mV 0C Model Recovery Summary
+ 31. Fast 1200mV 0C Model Removal Summary
+ 32. Fast 1200mV 0C Model Minimum Pulse Width
+ 33. Setup Times
+ 34. Hold Times
+ 35. Clock to Output Times
+ 36. Minimum Clock to Output Times
+ 37. Propagation Delay
+ 38. Minimum Propagation Delay
+ 39. Multicorner Timing Analysis Summary
+ 40. Setup Times
+ 41. Hold Times
+ 42. Clock to Output Times
+ 43. Minimum Clock to Output Times
+ 44. Progagation Delay
+ 45. Minimum Progagation Delay
+ 46. Board Trace Model Assignments
+ 47. Input Transition Times
+ 48. Slow Corner Signal Integrity Metrics
+ 49. Fast Corner Signal Integrity Metrics
+ 50. Setup Transfers
+ 51. Hold Transfers
+ 52. Report TCCS
+ 53. Report RSKM
+ 54. Unconstrained Paths
+ 55. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2008 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-----------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                     ;
++--------------------+--------------------------------------------------+
+; Quartus II Version ; Version 8.1 Build 163 10/28/2008 SJ Full Version ;
+; Revision Name      ; game                                             ;
+; Device Family      ; Cyclone III                                      ;
+; Device Name        ; EP3C40Q240C8                                     ;
+; Timing Models      ; Final                                            ;
+; Delay Model        ; Combined                                         ;
+; Rise/Fall Delays   ; Enabled                                          ;
++--------------------+--------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                                                                             ;
++----------------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+--------------------------------------+
+; Clock Name                       ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets                              ;
++----------------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+--------------------------------------+
+; clk25MHz                         ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { clk25MHz }                         ;
+; clk50MHz                         ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { clk50MHz }                         ;
+; receiver:i_receiver|receive_flag ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { receiver:i_receiver|receive_flag } ;
+; vga640480:i_vga640480|vcnt[1]    ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { vga640480:i_vga640480|vcnt[1] }    ;
+; VGA:vga1|clk1                    ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { VGA:vga1|clk1 }                    ;
+; VGA:vga1|clk2                    ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { VGA:vga1|clk2 }                    ;
+; XIHAO:xihao1|CounterY1[0]        ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { XIHAO:xihao1|CounterY1[0] }        ;
++----------------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+--------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Fmax Summary                                                                                           ;
++------------+-----------------+-------------------------------+---------------------------------------------------------------+
+; Fmax       ; Restricted Fmax ; Clock Name                    ; Note                                                          ;
++------------+-----------------+-------------------------------+---------------------------------------------------------------+
+; 143.78 MHz ; 143.78 MHz      ; clk25MHz                      ;                                                               ;
+; 143.88 MHz ; 143.88 MHz      ; VGA:vga1|clk2                 ;                                                               ;
+; 268.74 MHz ; 268.74 MHz      ; vga640480:i_vga640480|vcnt[1] ;                                                               ;
+; 340.72 MHz ; 340.72 MHz      ; VGA:vga1|clk1                 ;                                                               ;
+; 352.73 MHz ; 250.0 MHz       ; clk50MHz                      ; limit due to minimum period restriction (max I/O toggle rate) ;
+; 1000.0 MHz ; 350.02 MHz      ; XIHAO:xihao1|CounterY1[0]     ; limit due to minimum period restriction (tmin)                ;
++------------+-----------------+-------------------------------+---------------------------------------------------------------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++-----------------------------------------------------------+
+; Slow 1200mV 85C Model Setup Summary                       ;
++----------------------------------+--------+---------------+
+; Clock                            ; Slack  ; End Point TNS ;
++----------------------------------+--------+---------------+
+; clk25MHz                         ; -8.328 ; -549.035      ;
+; VGA:vga1|clk2                    ; -5.950 ; -59.881       ;
+; vga640480:i_vga640480|vcnt[1]    ; -4.345 ; -51.983       ;
+; receiver:i_receiver|receive_flag ; -3.924 ; -25.775       ;
+; VGA:vga1|clk1                    ; -1.935 ; -10.445       ;
+; clk50MHz                         ; -1.835 ; -25.225       ;
+; XIHAO:xihao1|CounterY1[0]        ; -1.153 ; -1.153        ;
++----------------------------------+--------+---------------+
+
+
++-----------------------------------------------------------+
+; Slow 1200mV 85C Model Hold Summary                        ;
++----------------------------------+--------+---------------+
+; Clock                            ; Slack  ; End Point TNS ;
++----------------------------------+--------+---------------+
+; clk25MHz                         ; -0.973 ; -5.968        ;
+; clk50MHz                         ; -0.342 ; -1.067        ;
+; VGA:vga1|clk1                    ; -0.326 ; -0.326        ;
+; vga640480:i_vga640480|vcnt[1]    ; 0.275  ; 0.000         ;
+; XIHAO:xihao1|CounterY1[0]        ; 0.335  ; 0.000         ;
+; VGA:vga1|clk2                    ; 0.775  ; 0.000         ;
+; receiver:i_receiver|receive_flag ; 0.908  ; 0.000         ;
++----------------------------------+--------+---------------+
+
+
+------------------------------------------
+; Slow 1200mV 85C Model Recovery Summary ;
+------------------------------------------
+No paths to report.
+
+
+-----------------------------------------
+; Slow 1200mV 85C Model Removal Summary ;
+-----------------------------------------
+No paths to report.
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Minimum Pulse Width                                                                                                                                                               ;
++--------+--------------+----------------+-------+------------+----------+------------+-------------------------------------------------------------------------------------------------------------------+
+; Slack  ; Actual Width ; Required Width ; CCPP  ; Type       ; Clock    ; Clock Edge ; Target                                                                                                            ;
++--------+--------------+----------------+-------+------------+----------+------------+-------------------------------------------------------------------------------------------------------------------+
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; VGA:vga1|over:rom|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a0                     ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; VGA:vga1|over:rom|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a0~porta_address_reg0  ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; VGA:vga1|over:rom|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a1                     ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; VGA:vga1|over:rom|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a10                    ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; VGA:vga1|over:rom|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a10~porta_address_reg0 ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; VGA:vga1|over:rom|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a11                    ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; VGA:vga1|over:rom|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a11~porta_address_reg0 ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; VGA:vga1|over:rom|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a12                    ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; VGA:vga1|over:rom|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a12~porta_address_reg0 ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; VGA:vga1|over:rom|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a13                    ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; VGA:vga1|over:rom|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a13~porta_address_reg0 ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; VGA:vga1|over:rom|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a14                    ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; VGA:vga1|over:rom|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a14~porta_address_reg0 ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; VGA:vga1|over:rom|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a15                    ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; VGA:vga1|over:rom|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a15~porta_address_reg0 ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; VGA:vga1|over:rom|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a16                    ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; VGA:vga1|over:rom|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a16~porta_address_reg0 ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; VGA:vga1|over:rom|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a17                    ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; VGA:vga1|over:rom|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a17~porta_address_reg0 ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; VGA:vga1|over:rom|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a18                    ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; VGA:vga1|over:rom|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a18~porta_address_reg0 ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; VGA:vga1|over:rom|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a19                    ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; VGA:vga1|over:rom|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a19~porta_address_reg0 ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; VGA:vga1|over:rom|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a1~porta_address_reg0  ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; VGA:vga1|over:rom|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a2                     ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; VGA:vga1|over:rom|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a20                    ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; VGA:vga1|over:rom|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a20~porta_address_reg0 ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; VGA:vga1|over:rom|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a21                    ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; VGA:vga1|over:rom|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a21~porta_address_reg0 ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; VGA:vga1|over:rom|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a22                    ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; VGA:vga1|over:rom|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a22~porta_address_reg0 ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; VGA:vga1|over:rom|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a23                    ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; VGA:vga1|over:rom|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a23~porta_address_reg0 ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; VGA:vga1|over:rom|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a2~porta_address_reg0  ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; VGA:vga1|over:rom|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a3                     ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; VGA:vga1|over:rom|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a3~porta_address_reg0  ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; VGA:vga1|over:rom|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a4                     ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; VGA:vga1|over:rom|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a4~porta_address_reg0  ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; VGA:vga1|over:rom|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a5                     ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; VGA:vga1|over:rom|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a5~porta_address_reg0  ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; VGA:vga1|over:rom|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a6                     ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; VGA:vga1|over:rom|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a6~porta_address_reg0  ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; VGA:vga1|over:rom|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a7                     ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; VGA:vga1|over:rom|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a7~porta_address_reg0  ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; VGA:vga1|over:rom|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a8                     ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; VGA:vga1|over:rom|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a8~porta_address_reg0  ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; VGA:vga1|over:rom|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a9                     ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; VGA:vga1|over:rom|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a9~porta_address_reg0  ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; over:i_over|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a0                           ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; over:i_over|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a0~porta_address_reg0        ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; over:i_over|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a1                           ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; over:i_over|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a10                          ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; over:i_over|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a10~porta_address_reg0       ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; over:i_over|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a11                          ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; over:i_over|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a11~porta_address_reg0       ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; over:i_over|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a12                          ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; over:i_over|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a12~porta_address_reg0       ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; over:i_over|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a13                          ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; over:i_over|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a13~porta_address_reg0       ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; over:i_over|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a14                          ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; over:i_over|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a14~porta_address_reg0       ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; over:i_over|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a15                          ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; over:i_over|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a15~porta_address_reg0       ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; over:i_over|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a16                          ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; over:i_over|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a16~porta_address_reg0       ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; over:i_over|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a17                          ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; over:i_over|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a17~porta_address_reg0       ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; over:i_over|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a18                          ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; over:i_over|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a18~porta_address_reg0       ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; over:i_over|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a19                          ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; over:i_over|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a19~porta_address_reg0       ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; over:i_over|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a1~porta_address_reg0        ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; over:i_over|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a2                           ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; over:i_over|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a20                          ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; over:i_over|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a20~porta_address_reg0       ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; over:i_over|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a21                          ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; over:i_over|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a21~porta_address_reg0       ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; over:i_over|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a22                          ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; over:i_over|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a22~porta_address_reg0       ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; over:i_over|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a23                          ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; over:i_over|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a23~porta_address_reg0       ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; over:i_over|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a2~porta_address_reg0        ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; over:i_over|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a3                           ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; over:i_over|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a3~porta_address_reg0        ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; over:i_over|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a4                           ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; over:i_over|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a4~porta_address_reg0        ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; over:i_over|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a5                           ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; over:i_over|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a5~porta_address_reg0        ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; over:i_over|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a6                           ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; over:i_over|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a6~porta_address_reg0        ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; over:i_over|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a7                           ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; over:i_over|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a7~porta_address_reg0        ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; over:i_over|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a8                           ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; over:i_over|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a8~porta_address_reg0        ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; over:i_over|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a9                           ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; over:i_over|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a9~porta_address_reg0        ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; timg:i_timg|altsyncram:altsyncram_component|altsyncram_p491:auto_generated|ram_block1a0                           ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; timg:i_timg|altsyncram:altsyncram_component|altsyncram_p491:auto_generated|ram_block1a0~porta_address_reg0        ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; timg:i_timg|altsyncram:altsyncram_component|altsyncram_p491:auto_generated|ram_block1a1                           ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; timg:i_timg|altsyncram:altsyncram_component|altsyncram_p491:auto_generated|ram_block1a1~porta_address_reg0        ;
++--------+--------------+----------------+-------+------------+----------+------------+-------------------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------+
+; Setup Times                                                             ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; key_clk   ; clk50MHz   ; -0.253 ; -0.160 ; Rise       ; clk50MHz        ;
+; key_data  ; clk50MHz   ; 3.172  ; 3.370  ; Rise       ; clk50MHz        ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Hold Times                                                              ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; key_clk   ; clk50MHz   ; 0.648  ; 0.568  ; Rise       ; clk50MHz        ;
+; key_data  ; clk50MHz   ; -1.777 ; -2.025 ; Rise       ; clk50MHz        ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++----------------------------------------------------------------------------------------------------------+
+; Clock to Output Times                                                                                    ;
++-----------+-------------------------------+--------+--------+------------+-------------------------------+
+; Data Port ; Clock Port                    ; Rise   ; Fall   ; Clock Edge ; Clock Reference               ;
++-----------+-------------------------------+--------+--------+------------+-------------------------------+
+; vs        ; XIHAO:xihao1|CounterY1[0]     ; 10.892 ;        ; Rise       ; XIHAO:xihao1|CounterY1[0]     ;
+; vs        ; XIHAO:xihao1|CounterY1[0]     ;        ; 11.274 ; Fall       ; XIHAO:xihao1|CounterY1[0]     ;
+; b         ; clk25MHz                      ; 16.160 ; 15.714 ; Rise       ; clk25MHz                      ;
+; g         ; clk25MHz                      ; 13.925 ; 13.609 ; Rise       ; clk25MHz                      ;
+; hs        ; clk25MHz                      ; 14.329 ; 13.936 ; Rise       ; clk25MHz                      ;
+; r         ; clk25MHz                      ; 15.136 ; 14.904 ; Rise       ; clk25MHz                      ;
+; vs        ; clk25MHz                      ; 13.519 ; 13.999 ; Rise       ; clk25MHz                      ;
+; b         ; vga640480:i_vga640480|vcnt[1] ; 19.973 ; 19.527 ; Rise       ; vga640480:i_vga640480|vcnt[1] ;
+; g         ; vga640480:i_vga640480|vcnt[1] ; 19.773 ; 19.491 ; Rise       ; vga640480:i_vga640480|vcnt[1] ;
+; r         ; vga640480:i_vga640480|vcnt[1] ; 20.013 ; 19.722 ; Rise       ; vga640480:i_vga640480|vcnt[1] ;
+; vs        ; vga640480:i_vga640480|vcnt[1] ;        ; 9.662  ; Rise       ; vga640480:i_vga640480|vcnt[1] ;
+; vs        ; vga640480:i_vga640480|vcnt[1] ; 9.459  ;        ; Fall       ; vga640480:i_vga640480|vcnt[1] ;
++-----------+-------------------------------+--------+--------+------------+-------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                                                            ;
++-----------+-------------------------------+--------+--------+------------+-------------------------------+
+; Data Port ; Clock Port                    ; Rise   ; Fall   ; Clock Edge ; Clock Reference               ;
++-----------+-------------------------------+--------+--------+------------+-------------------------------+
+; vs        ; XIHAO:xihao1|CounterY1[0]     ; 10.547 ;        ; Rise       ; XIHAO:xihao1|CounterY1[0]     ;
+; vs        ; XIHAO:xihao1|CounterY1[0]     ;        ; 10.917 ; Fall       ; XIHAO:xihao1|CounterY1[0]     ;
+; b         ; clk25MHz                      ; 11.199 ; 10.701 ; Rise       ; clk25MHz                      ;
+; g         ; clk25MHz                      ; 9.627  ; 9.347  ; Rise       ; clk25MHz                      ;
+; hs        ; clk25MHz                      ; 11.178 ; 11.074 ; Rise       ; clk25MHz                      ;
+; r         ; clk25MHz                      ; 10.102 ; 9.802  ; Rise       ; clk25MHz                      ;
+; vs        ; clk25MHz                      ; 10.710 ; 11.158 ; Rise       ; clk25MHz                      ;
+; b         ; vga640480:i_vga640480|vcnt[1] ; 12.015 ; 11.585 ; Rise       ; vga640480:i_vga640480|vcnt[1] ;
+; g         ; vga640480:i_vga640480|vcnt[1] ; 13.070 ; 12.871 ; Rise       ; vga640480:i_vga640480|vcnt[1] ;
+; r         ; vga640480:i_vga640480|vcnt[1] ; 10.897 ; 10.597 ; Rise       ; vga640480:i_vga640480|vcnt[1] ;
+; vs        ; vga640480:i_vga640480|vcnt[1] ;        ; 9.435  ; Rise       ; vga640480:i_vga640480|vcnt[1] ;
+; vs        ; vga640480:i_vga640480|vcnt[1] ; 9.241  ;        ; Fall       ; vga640480:i_vga640480|vcnt[1] ;
++-----------+-------------------------------+--------+--------+------------+-------------------------------+
+
+
++--------------------------------------------------------------+
+; Propagation Delay                                            ;
++------------+-------------+--------+--------+--------+--------+
+; Input Port ; Output Port ; RR     ; RF     ; FR     ; FF     ;
++------------+-------------+--------+--------+--------+--------+
+; MS         ; b           ; 15.822 ; 15.376 ; 16.113 ; 15.667 ;
+; MS         ; g           ; 15.521 ; 15.232 ; 15.913 ; 15.631 ;
+; MS         ; hs          ; 11.858 ; 11.665 ; 12.097 ; 11.948 ;
+; MS         ; r           ; 15.708 ; 15.508 ; 16.153 ; 15.862 ;
+; MS         ; vs          ; 11.501 ; 11.662 ; 11.700 ; 11.818 ;
++------------+-------------+--------+--------+--------+--------+
+
+
++--------------------------------------------------------------+
+; Minimum Propagation Delay                                    ;
++------------+-------------+--------+--------+--------+--------+
+; Input Port ; Output Port ; RR     ; RF     ; FR     ; FF     ;
++------------+-------------+--------+--------+--------+--------+
+; MS         ; b           ; 11.945 ; 11.556 ; 12.190 ; 11.801 ;
+; MS         ; g           ; 11.198 ; 10.926 ; 11.438 ; 11.158 ;
+; MS         ; hs          ; 11.568 ; 11.388 ; 11.799 ; 11.657 ;
+; MS         ; r           ; 11.106 ; 10.814 ; 11.324 ; 11.024 ;
+; MS         ; vs          ; 11.229 ; 11.381 ; 11.420 ; 11.531 ;
++------------+-------------+--------+--------+--------+--------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Fmax Summary                                                                                             ;
++-------------+-----------------+-------------------------------+---------------------------------------------------------------+
+; Fmax        ; Restricted Fmax ; Clock Name                    ; Note                                                          ;
++-------------+-----------------+-------------------------------+---------------------------------------------------------------+
+; 154.13 MHz  ; 154.13 MHz      ; clk25MHz                      ;                                                               ;
+; 156.1 MHz   ; 156.1 MHz       ; VGA:vga1|clk2                 ;                                                               ;
+; 290.61 MHz  ; 290.61 MHz      ; vga640480:i_vga640480|vcnt[1] ;                                                               ;
+; 371.47 MHz  ; 350.02 MHz      ; VGA:vga1|clk1                 ; limit due to minimum period restriction (tmin)                ;
+; 384.32 MHz  ; 250.0 MHz       ; clk50MHz                      ; limit due to minimum period restriction (max I/O toggle rate) ;
+; 1101.32 MHz ; 350.02 MHz      ; XIHAO:xihao1|CounterY1[0]     ; limit due to minimum period restriction (tmin)                ;
++-------------+-----------------+-------------------------------+---------------------------------------------------------------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++-----------------------------------------------------------+
+; Slow 1200mV 0C Model Setup Summary                        ;
++----------------------------------+--------+---------------+
+; Clock                            ; Slack  ; End Point TNS ;
++----------------------------------+--------+---------------+
+; clk25MHz                         ; -7.491 ; -503.437      ;
+; VGA:vga1|clk2                    ; -5.406 ; -54.637       ;
+; vga640480:i_vga640480|vcnt[1]    ; -4.021 ; -47.719       ;
+; receiver:i_receiver|receive_flag ; -3.639 ; -23.771       ;
+; VGA:vga1|clk1                    ; -1.692 ; -8.745        ;
+; clk50MHz                         ; -1.602 ; -21.873       ;
+; XIHAO:xihao1|CounterY1[0]        ; -1.020 ; -1.020        ;
++----------------------------------+--------+---------------+
+
+
++-----------------------------------------------------------+
+; Slow 1200mV 0C Model Hold Summary                         ;
++----------------------------------+--------+---------------+
+; Clock                            ; Slack  ; End Point TNS ;
++----------------------------------+--------+---------------+
+; clk25MHz                         ; -0.845 ; -6.210        ;
+; clk50MHz                         ; -0.323 ; -0.372        ;
+; VGA:vga1|clk1                    ; -0.202 ; -0.202        ;
+; XIHAO:xihao1|CounterY1[0]        ; 0.289  ; 0.000         ;
+; vga640480:i_vga640480|vcnt[1]    ; 0.312  ; 0.000         ;
+; VGA:vga1|clk2                    ; 0.723  ; 0.000         ;
+; receiver:i_receiver|receive_flag ; 0.772  ; 0.000         ;
++----------------------------------+--------+---------------+
+
+
+-----------------------------------------
+; Slow 1200mV 0C Model Recovery Summary ;
+-----------------------------------------
+No paths to report.
+
+
+----------------------------------------
+; Slow 1200mV 0C Model Removal Summary ;
+----------------------------------------
+No paths to report.
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Minimum Pulse Width                                                                                                                                                                ;
++--------+--------------+----------------+-------+------------+----------+------------+-------------------------------------------------------------------------------------------------------------------+
+; Slack  ; Actual Width ; Required Width ; CCPP  ; Type       ; Clock    ; Clock Edge ; Target                                                                                                            ;
++--------+--------------+----------------+-------+------------+----------+------------+-------------------------------------------------------------------------------------------------------------------+
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; VGA:vga1|over:rom|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a0                     ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; VGA:vga1|over:rom|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a0~porta_address_reg0  ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; VGA:vga1|over:rom|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a1                     ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; VGA:vga1|over:rom|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a10                    ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; VGA:vga1|over:rom|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a10~porta_address_reg0 ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; VGA:vga1|over:rom|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a11                    ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; VGA:vga1|over:rom|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a11~porta_address_reg0 ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; VGA:vga1|over:rom|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a12                    ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; VGA:vga1|over:rom|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a12~porta_address_reg0 ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; VGA:vga1|over:rom|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a13                    ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; VGA:vga1|over:rom|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a13~porta_address_reg0 ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; VGA:vga1|over:rom|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a14                    ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; VGA:vga1|over:rom|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a14~porta_address_reg0 ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; VGA:vga1|over:rom|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a15                    ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; VGA:vga1|over:rom|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a15~porta_address_reg0 ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; VGA:vga1|over:rom|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a16                    ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; VGA:vga1|over:rom|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a16~porta_address_reg0 ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; VGA:vga1|over:rom|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a17                    ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; VGA:vga1|over:rom|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a17~porta_address_reg0 ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; VGA:vga1|over:rom|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a18                    ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; VGA:vga1|over:rom|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a18~porta_address_reg0 ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; VGA:vga1|over:rom|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a19                    ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; VGA:vga1|over:rom|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a19~porta_address_reg0 ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; VGA:vga1|over:rom|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a1~porta_address_reg0  ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; VGA:vga1|over:rom|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a2                     ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; VGA:vga1|over:rom|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a20                    ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; VGA:vga1|over:rom|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a20~porta_address_reg0 ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; VGA:vga1|over:rom|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a21                    ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; VGA:vga1|over:rom|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a21~porta_address_reg0 ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; VGA:vga1|over:rom|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a22                    ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; VGA:vga1|over:rom|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a22~porta_address_reg0 ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; VGA:vga1|over:rom|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a23                    ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; VGA:vga1|over:rom|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a23~porta_address_reg0 ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; VGA:vga1|over:rom|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a2~porta_address_reg0  ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; VGA:vga1|over:rom|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a3                     ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; VGA:vga1|over:rom|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a3~porta_address_reg0  ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; VGA:vga1|over:rom|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a4                     ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; VGA:vga1|over:rom|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a4~porta_address_reg0  ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; VGA:vga1|over:rom|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a5                     ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; VGA:vga1|over:rom|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a5~porta_address_reg0  ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; VGA:vga1|over:rom|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a6                     ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; VGA:vga1|over:rom|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a6~porta_address_reg0  ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; VGA:vga1|over:rom|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a7                     ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; VGA:vga1|over:rom|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a7~porta_address_reg0  ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; VGA:vga1|over:rom|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a8                     ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; VGA:vga1|over:rom|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a8~porta_address_reg0  ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; VGA:vga1|over:rom|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a9                     ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; VGA:vga1|over:rom|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a9~porta_address_reg0  ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; over:i_over|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a0                           ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; over:i_over|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a0~porta_address_reg0        ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; over:i_over|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a1                           ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; over:i_over|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a10                          ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; over:i_over|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a10~porta_address_reg0       ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; over:i_over|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a11                          ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; over:i_over|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a11~porta_address_reg0       ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; over:i_over|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a12                          ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; over:i_over|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a12~porta_address_reg0       ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; over:i_over|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a13                          ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; over:i_over|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a13~porta_address_reg0       ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; over:i_over|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a14                          ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; over:i_over|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a14~porta_address_reg0       ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; over:i_over|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a15                          ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; over:i_over|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a15~porta_address_reg0       ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; over:i_over|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a16                          ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; over:i_over|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a16~porta_address_reg0       ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; over:i_over|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a17                          ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; over:i_over|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a17~porta_address_reg0       ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; over:i_over|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a18                          ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; over:i_over|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a18~porta_address_reg0       ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; over:i_over|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a19                          ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; over:i_over|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a19~porta_address_reg0       ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; over:i_over|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a1~porta_address_reg0        ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; over:i_over|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a2                           ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; over:i_over|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a20                          ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; over:i_over|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a20~porta_address_reg0       ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; over:i_over|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a21                          ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; over:i_over|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a21~porta_address_reg0       ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; over:i_over|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a22                          ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; over:i_over|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a22~porta_address_reg0       ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; over:i_over|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a23                          ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; over:i_over|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a23~porta_address_reg0       ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; over:i_over|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a2~porta_address_reg0        ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; over:i_over|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a3                           ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; over:i_over|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a3~porta_address_reg0        ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; over:i_over|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a4                           ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; over:i_over|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a4~porta_address_reg0        ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; over:i_over|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a5                           ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; over:i_over|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a5~porta_address_reg0        ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; over:i_over|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a6                           ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; over:i_over|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a6~porta_address_reg0        ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; over:i_over|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a7                           ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; over:i_over|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a7~porta_address_reg0        ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; over:i_over|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a8                           ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; over:i_over|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a8~porta_address_reg0        ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; over:i_over|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a9                           ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; over:i_over|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a9~porta_address_reg0        ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; timg:i_timg|altsyncram:altsyncram_component|altsyncram_p491:auto_generated|ram_block1a0                           ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; timg:i_timg|altsyncram:altsyncram_component|altsyncram_p491:auto_generated|ram_block1a0~porta_address_reg0        ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; timg:i_timg|altsyncram:altsyncram_component|altsyncram_p491:auto_generated|ram_block1a1                           ;
+; -3.201 ; 1.000        ; 4.201          ; 0.000 ; Min Period ; clk25MHz ; Rise       ; timg:i_timg|altsyncram:altsyncram_component|altsyncram_p491:auto_generated|ram_block1a1~porta_address_reg0        ;
++--------+--------------+----------------+-------+------------+----------+------------+-------------------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------+
+; Setup Times                                                             ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; key_clk   ; clk50MHz   ; -0.218 ; -0.020 ; Rise       ; clk50MHz        ;
+; key_data  ; clk50MHz   ; 2.887  ; 2.913  ; Rise       ; clk50MHz        ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Hold Times                                                              ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; key_clk   ; clk50MHz   ; 0.573  ; 0.391  ; Rise       ; clk50MHz        ;
+; key_data  ; clk50MHz   ; -1.590 ; -1.709 ; Rise       ; clk50MHz        ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++----------------------------------------------------------------------------------------------------------+
+; Clock to Output Times                                                                                    ;
++-----------+-------------------------------+--------+--------+------------+-------------------------------+
+; Data Port ; Clock Port                    ; Rise   ; Fall   ; Clock Edge ; Clock Reference               ;
++-----------+-------------------------------+--------+--------+------------+-------------------------------+
+; vs        ; XIHAO:xihao1|CounterY1[0]     ; 10.318 ;        ; Rise       ; XIHAO:xihao1|CounterY1[0]     ;
+; vs        ; XIHAO:xihao1|CounterY1[0]     ;        ; 10.887 ; Fall       ; XIHAO:xihao1|CounterY1[0]     ;
+; b         ; clk25MHz                      ; 15.446 ; 14.797 ; Rise       ; clk25MHz                      ;
+; g         ; clk25MHz                      ; 13.267 ; 12.791 ; Rise       ; clk25MHz                      ;
+; hs        ; clk25MHz                      ; 13.761 ; 13.021 ; Rise       ; clk25MHz                      ;
+; r         ; clk25MHz                      ; 14.360 ; 13.964 ; Rise       ; clk25MHz                      ;
+; vs        ; clk25MHz                      ; 12.781 ; 13.596 ; Rise       ; clk25MHz                      ;
+; b         ; vga640480:i_vga640480|vcnt[1] ; 18.837 ; 18.188 ; Rise       ; vga640480:i_vga640480|vcnt[1] ;
+; g         ; vga640480:i_vga640480|vcnt[1] ; 18.616 ; 18.182 ; Rise       ; vga640480:i_vga640480|vcnt[1] ;
+; r         ; vga640480:i_vga640480|vcnt[1] ; 18.784 ; 18.410 ; Rise       ; vga640480:i_vga640480|vcnt[1] ;
+; vs        ; vga640480:i_vga640480|vcnt[1] ;        ; 9.337  ; Rise       ; vga640480:i_vga640480|vcnt[1] ;
+; vs        ; vga640480:i_vga640480|vcnt[1] ; 9.036  ;        ; Fall       ; vga640480:i_vga640480|vcnt[1] ;
++-----------+-------------------------------+--------+--------+------------+-------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                                                            ;
++-----------+-------------------------------+--------+--------+------------+-------------------------------+
+; Data Port ; Clock Port                    ; Rise   ; Fall   ; Clock Edge ; Clock Reference               ;
++-----------+-------------------------------+--------+--------+------------+-------------------------------+
+; vs        ; XIHAO:xihao1|CounterY1[0]     ; 10.001 ;        ; Rise       ; XIHAO:xihao1|CounterY1[0]     ;
+; vs        ; XIHAO:xihao1|CounterY1[0]     ;        ; 10.548 ; Fall       ; XIHAO:xihao1|CounterY1[0]     ;
+; b         ; clk25MHz                      ; 10.644 ; 9.956  ; Rise       ; clk25MHz                      ;
+; g         ; clk25MHz                      ; 9.164  ; 8.739  ; Rise       ; clk25MHz                      ;
+; hs        ; clk25MHz                      ; 10.713 ; 10.475 ; Rise       ; clk25MHz                      ;
+; r         ; clk25MHz                      ; 9.529  ; 9.177  ; Rise       ; clk25MHz                      ;
+; vs        ; clk25MHz                      ; 10.132 ; 10.784 ; Rise       ; clk25MHz                      ;
+; b         ; vga640480:i_vga640480|vcnt[1] ; 11.414 ; 10.792 ; Rise       ; vga640480:i_vga640480|vcnt[1] ;
+; g         ; vga640480:i_vga640480|vcnt[1] ; 12.246 ; 11.902 ; Rise       ; vga640480:i_vga640480|vcnt[1] ;
+; r         ; vga640480:i_vga640480|vcnt[1] ; 10.299 ; 9.947  ; Rise       ; vga640480:i_vga640480|vcnt[1] ;
+; vs        ; vga640480:i_vga640480|vcnt[1] ;        ; 9.121  ; Rise       ; vga640480:i_vga640480|vcnt[1] ;
+; vs        ; vga640480:i_vga640480|vcnt[1] ; 8.835  ;        ; Fall       ; vga640480:i_vga640480|vcnt[1] ;
++-----------+-------------------------------+--------+--------+------------+-------------------------------+
+
+
++--------------------------------------------------------------+
+; Propagation Delay                                            ;
++------------+-------------+--------+--------+--------+--------+
+; Input Port ; Output Port ; RR     ; RF     ; FR     ; FF     ;
++------------+-------------+--------+--------+--------+--------+
+; MS         ; b           ; 14.950 ; 14.301 ; 15.185 ; 14.536 ;
+; MS         ; g           ; 14.530 ; 14.090 ; 14.964 ; 14.530 ;
+; MS         ; hs          ; 11.308 ; 11.003 ; 11.388 ; 11.123 ;
+; MS         ; r           ; 14.634 ; 14.376 ; 15.132 ; 14.758 ;
+; MS         ; vs          ; 10.903 ; 11.131 ; 10.907 ; 11.097 ;
++------------+-------------+--------+--------+--------+--------+
+
+
++--------------------------------------------------------------+
+; Minimum Propagation Delay                                    ;
++------------+-------------+--------+--------+--------+--------+
+; Input Port ; Output Port ; RR     ; RF     ; FR     ; FF     ;
++------------+-------------+--------+--------+--------+--------+
+; MS         ; b           ; 11.330 ; 10.742 ; 11.383 ; 10.795 ;
+; MS         ; g           ; 10.656 ; 10.236 ; 10.667 ; 10.242 ;
+; MS         ; hs          ; 11.041 ; 10.754 ; 11.123 ; 10.869 ;
+; MS         ; r           ; 10.519 ; 10.172 ; 10.511 ; 10.159 ;
+; MS         ; vs          ; 10.658 ; 10.873 ; 10.664 ; 10.844 ;
++------------+-------------+--------+--------+--------+--------+
+
+
++-----------------------------------------------------------+
+; Fast 1200mV 0C Model Setup Summary                        ;
++----------------------------------+--------+---------------+
+; Clock                            ; Slack  ; End Point TNS ;
++----------------------------------+--------+---------------+
+; clk25MHz                         ; -3.025 ; -118.912      ;
+; VGA:vga1|clk2                    ; -2.086 ; -19.854       ;
+; vga640480:i_vga640480|vcnt[1]    ; -1.375 ; -10.972       ;
+; receiver:i_receiver|receive_flag ; -1.119 ; -7.254        ;
+; XIHAO:xihao1|CounterY1[0]        ; -0.299 ; -0.299        ;
+; VGA:vga1|clk1                    ; -0.241 ; -0.551        ;
+; clk50MHz                         ; -0.210 ; -1.740        ;
++----------------------------------+--------+---------------+
+
+
++-----------------------------------------------------------+
+; Fast 1200mV 0C Model Hold Summary                         ;
++----------------------------------+--------+---------------+
+; Clock                            ; Slack  ; End Point TNS ;
++----------------------------------+--------+---------------+
+; clk25MHz                         ; -0.562 ; -7.497        ;
+; clk50MHz                         ; -0.332 ; -3.620        ;
+; VGA:vga1|clk1                    ; -0.318 ; -0.318        ;
+; vga640480:i_vga640480|vcnt[1]    ; -0.050 ; -0.151        ;
+; XIHAO:xihao1|CounterY1[0]        ; 0.138  ; 0.000         ;
+; VGA:vga1|clk2                    ; 0.312  ; 0.000         ;
+; receiver:i_receiver|receive_flag ; 0.396  ; 0.000         ;
++----------------------------------+--------+---------------+
+
+
+-----------------------------------------
+; Fast 1200mV 0C Model Recovery Summary ;
+-----------------------------------------
+No paths to report.
+
+
+----------------------------------------
+; Fast 1200mV 0C Model Removal Summary ;
+----------------------------------------
+No paths to report.
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast 1200mV 0C Model Minimum Pulse Width                                                                                                                                                                     ;
++--------+--------------+----------------+-------+------------+---------------+------------+-------------------------------------------------------------------------------------------------------------------+
+; Slack  ; Actual Width ; Required Width ; CCPP  ; Type       ; Clock         ; Clock Edge ; Target                                                                                                            ;
++--------+--------------+----------------+-------+------------+---------------+------------+-------------------------------------------------------------------------------------------------------------------+
+; -3.000 ; 1.000        ; 4.000          ; 0.000 ; Port Rate  ; clk50MHz      ; Rise       ; clk50MHz                                                                                                          ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; clk25MHz      ; Rise       ; VGA:vga1|CollisionX1                                                                                              ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; clk25MHz      ; Rise       ; VGA:vga1|CollisionX2                                                                                              ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; clk25MHz      ; Rise       ; VGA:vga1|CollisionY1                                                                                              ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; clk25MHz      ; Rise       ; VGA:vga1|CollisionY2                                                                                              ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; VGA:vga1|clk2 ; Rise       ; VGA:vga1|PaddlePosition[0]                                                                                        ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; VGA:vga1|clk2 ; Rise       ; VGA:vga1|PaddlePosition[1]                                                                                        ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; VGA:vga1|clk2 ; Rise       ; VGA:vga1|PaddlePosition[2]                                                                                        ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; VGA:vga1|clk2 ; Rise       ; VGA:vga1|PaddlePosition[3]                                                                                        ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; VGA:vga1|clk2 ; Rise       ; VGA:vga1|PaddlePosition[4]                                                                                        ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; VGA:vga1|clk2 ; Rise       ; VGA:vga1|PaddlePosition[5]                                                                                        ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; VGA:vga1|clk2 ; Rise       ; VGA:vga1|PaddlePosition[6]                                                                                        ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; VGA:vga1|clk2 ; Rise       ; VGA:vga1|PaddlePosition[7]                                                                                        ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; VGA:vga1|clk2 ; Rise       ; VGA:vga1|PaddlePosition[8]                                                                                        ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; VGA:vga1|clk2 ; Rise       ; VGA:vga1|PaddlePosition[9]                                                                                        ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; clk25MHz      ; Rise       ; VGA:vga1|ResetCollision                                                                                           ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; clk25MHz      ; Rise       ; VGA:vga1|ballX[0]                                                                                                 ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; clk25MHz      ; Rise       ; VGA:vga1|ballX[1]                                                                                                 ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; clk25MHz      ; Rise       ; VGA:vga1|ballX[2]                                                                                                 ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; clk25MHz      ; Rise       ; VGA:vga1|ballX[3]                                                                                                 ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; clk25MHz      ; Rise       ; VGA:vga1|ballX[4]                                                                                                 ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; clk25MHz      ; Rise       ; VGA:vga1|ballX[5]                                                                                                 ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; clk25MHz      ; Rise       ; VGA:vga1|ballX[6]                                                                                                 ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; clk25MHz      ; Rise       ; VGA:vga1|ballX[7]                                                                                                 ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; clk25MHz      ; Rise       ; VGA:vga1|ballX[8]                                                                                                 ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; clk25MHz      ; Rise       ; VGA:vga1|ballX[9]                                                                                                 ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; clk25MHz      ; Rise       ; VGA:vga1|ballY[0]                                                                                                 ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; clk25MHz      ; Rise       ; VGA:vga1|ballY[1]                                                                                                 ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; clk25MHz      ; Rise       ; VGA:vga1|ballY[2]                                                                                                 ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; clk25MHz      ; Rise       ; VGA:vga1|ballY[3]                                                                                                 ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; clk25MHz      ; Rise       ; VGA:vga1|ballY[4]                                                                                                 ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; clk25MHz      ; Rise       ; VGA:vga1|ballY[5]                                                                                                 ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; clk25MHz      ; Rise       ; VGA:vga1|ballY[6]                                                                                                 ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; clk25MHz      ; Rise       ; VGA:vga1|ballY[7]                                                                                                 ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; clk25MHz      ; Rise       ; VGA:vga1|ballY[8]                                                                                                 ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; clk25MHz      ; Rise       ; VGA:vga1|ballY[9]                                                                                                 ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; clk25MHz      ; Rise       ; VGA:vga1|ball_dirX                                                                                                ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; clk25MHz      ; Rise       ; VGA:vga1|ball_dirY                                                                                                ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; clk25MHz      ; Rise       ; VGA:vga1|ball_inX                                                                                                 ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; clk25MHz      ; Rise       ; VGA:vga1|ball_inY                                                                                                 ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; clk25MHz      ; Rise       ; VGA:vga1|clk1                                                                                                     ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; VGA:vga1|clk1 ; Rise       ; VGA:vga1|clk2                                                                                                     ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; VGA:vga1|clk1 ; Rise       ; VGA:vga1|cnt1[0]                                                                                                  ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; VGA:vga1|clk1 ; Rise       ; VGA:vga1|cnt1[1]                                                                                                  ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; VGA:vga1|clk1 ; Rise       ; VGA:vga1|cnt1[2]                                                                                                  ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; VGA:vga1|clk1 ; Rise       ; VGA:vga1|cnt1[3]                                                                                                  ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; VGA:vga1|clk1 ; Rise       ; VGA:vga1|cnt1[4]                                                                                                  ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; VGA:vga1|clk1 ; Rise       ; VGA:vga1|cnt1[5]                                                                                                  ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; VGA:vga1|clk1 ; Rise       ; VGA:vga1|cnt1[6]                                                                                                  ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; clk25MHz      ; Rise       ; VGA:vga1|cnt[10]                                                                                                  ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; clk25MHz      ; Rise       ; VGA:vga1|cnt[1]                                                                                                   ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; clk25MHz      ; Rise       ; VGA:vga1|cnt[2]                                                                                                   ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; clk25MHz      ; Rise       ; VGA:vga1|cnt[3]                                                                                                   ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; clk25MHz      ; Rise       ; VGA:vga1|cnt[4]                                                                                                   ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; clk25MHz      ; Rise       ; VGA:vga1|cnt[5]                                                                                                   ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; clk25MHz      ; Rise       ; VGA:vga1|cnt[6]                                                                                                   ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; clk25MHz      ; Rise       ; VGA:vga1|cnt[7]                                                                                                   ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; clk25MHz      ; Rise       ; VGA:vga1|cnt[8]                                                                                                   ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; clk25MHz      ; Rise       ; VGA:vga1|cnt[9]                                                                                                   ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; clk25MHz      ; Rise       ; VGA:vga1|gameover                                                                                                 ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; clk25MHz      ; Rise       ; VGA:vga1|over:rom|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|address_reg_a[0]                 ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; clk25MHz      ; Rise       ; VGA:vga1|over:rom|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|address_reg_a[1]                 ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; clk25MHz      ; Rise       ; VGA:vga1|over:rom|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|address_reg_a[2]                 ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; clk25MHz      ; Rise       ; VGA:vga1|over:rom|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|out_address_reg_a[0]             ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; clk25MHz      ; Rise       ; VGA:vga1|over:rom|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|out_address_reg_a[1]             ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; clk25MHz      ; Rise       ; VGA:vga1|over:rom|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|out_address_reg_a[2]             ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; clk25MHz      ; Rise       ; VGA:vga1|over:rom|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a0                     ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; clk25MHz      ; Rise       ; VGA:vga1|over:rom|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a0~porta_address_reg0  ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; clk25MHz      ; Rise       ; VGA:vga1|over:rom|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a1                     ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; clk25MHz      ; Rise       ; VGA:vga1|over:rom|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a10                    ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; clk25MHz      ; Rise       ; VGA:vga1|over:rom|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a10~porta_address_reg0 ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; clk25MHz      ; Rise       ; VGA:vga1|over:rom|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a11                    ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; clk25MHz      ; Rise       ; VGA:vga1|over:rom|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a11~porta_address_reg0 ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; clk25MHz      ; Rise       ; VGA:vga1|over:rom|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a12                    ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; clk25MHz      ; Rise       ; VGA:vga1|over:rom|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a12~porta_address_reg0 ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; clk25MHz      ; Rise       ; VGA:vga1|over:rom|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a13                    ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; clk25MHz      ; Rise       ; VGA:vga1|over:rom|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a13~porta_address_reg0 ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; clk25MHz      ; Rise       ; VGA:vga1|over:rom|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a14                    ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; clk25MHz      ; Rise       ; VGA:vga1|over:rom|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a14~porta_address_reg0 ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; clk25MHz      ; Rise       ; VGA:vga1|over:rom|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a15                    ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; clk25MHz      ; Rise       ; VGA:vga1|over:rom|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a15~porta_address_reg0 ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; clk25MHz      ; Rise       ; VGA:vga1|over:rom|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a16                    ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; clk25MHz      ; Rise       ; VGA:vga1|over:rom|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a16~porta_address_reg0 ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; clk25MHz      ; Rise       ; VGA:vga1|over:rom|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a17                    ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; clk25MHz      ; Rise       ; VGA:vga1|over:rom|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a17~porta_address_reg0 ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; clk25MHz      ; Rise       ; VGA:vga1|over:rom|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a18                    ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; clk25MHz      ; Rise       ; VGA:vga1|over:rom|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a18~porta_address_reg0 ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; clk25MHz      ; Rise       ; VGA:vga1|over:rom|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a19                    ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; clk25MHz      ; Rise       ; VGA:vga1|over:rom|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a19~porta_address_reg0 ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; clk25MHz      ; Rise       ; VGA:vga1|over:rom|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a1~porta_address_reg0  ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; clk25MHz      ; Rise       ; VGA:vga1|over:rom|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a2                     ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; clk25MHz      ; Rise       ; VGA:vga1|over:rom|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a20                    ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; clk25MHz      ; Rise       ; VGA:vga1|over:rom|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a20~porta_address_reg0 ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; clk25MHz      ; Rise       ; VGA:vga1|over:rom|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a21                    ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; clk25MHz      ; Rise       ; VGA:vga1|over:rom|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a21~porta_address_reg0 ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; clk25MHz      ; Rise       ; VGA:vga1|over:rom|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a22                    ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; clk25MHz      ; Rise       ; VGA:vga1|over:rom|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a22~porta_address_reg0 ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; clk25MHz      ; Rise       ; VGA:vga1|over:rom|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a23                    ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; clk25MHz      ; Rise       ; VGA:vga1|over:rom|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a23~porta_address_reg0 ;
+; -1.000 ; 1.000        ; 2.000          ; 0.000 ; Min Period ; clk25MHz      ; Rise       ; VGA:vga1|over:rom|altsyncram:altsyncram_component|altsyncram_9591:auto_generated|ram_block1a2~porta_address_reg0  ;
++--------+--------------+----------------+-------+------------+---------------+------------+-------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------+
+; Setup Times                                                            ;
++-----------+------------+--------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+-------+------------+-----------------+
+; key_clk   ; clk50MHz   ; -0.093 ; 0.198 ; Rise       ; clk50MHz        ;
+; key_data  ; clk50MHz   ; 1.388  ; 1.993 ; Rise       ; clk50MHz        ;
++-----------+------------+--------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Hold Times                                                              ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; key_clk   ; clk50MHz   ; 0.265  ; -0.022 ; Rise       ; clk50MHz        ;
+; key_data  ; clk50MHz   ; -0.815 ; -1.408 ; Rise       ; clk50MHz        ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++--------------------------------------------------------------------------------------------------------+
+; Clock to Output Times                                                                                  ;
++-----------+-------------------------------+-------+-------+------------+-------------------------------+
+; Data Port ; Clock Port                    ; Rise  ; Fall  ; Clock Edge ; Clock Reference               ;
++-----------+-------------------------------+-------+-------+------------+-------------------------------+
+; vs        ; XIHAO:xihao1|CounterY1[0]     ; 5.633 ;       ; Rise       ; XIHAO:xihao1|CounterY1[0]     ;
+; vs        ; XIHAO:xihao1|CounterY1[0]     ;       ; 5.340 ; Fall       ; XIHAO:xihao1|CounterY1[0]     ;
+; b         ; clk25MHz                      ; 7.326 ; 7.433 ; Rise       ; clk25MHz                      ;
+; g         ; clk25MHz                      ; 6.445 ; 6.581 ; Rise       ; clk25MHz                      ;
+; hs        ; clk25MHz                      ; 6.629 ; 7.034 ; Rise       ; clk25MHz                      ;
+; r         ; clk25MHz                      ; 6.922 ; 7.053 ; Rise       ; clk25MHz                      ;
+; vs        ; clk25MHz                      ; 6.728 ; 6.307 ; Rise       ; clk25MHz                      ;
+; b         ; vga640480:i_vga640480|vcnt[1] ; 9.009 ; 9.116 ; Rise       ; vga640480:i_vga640480|vcnt[1] ;
+; g         ; vga640480:i_vga640480|vcnt[1] ; 8.985 ; 9.056 ; Rise       ; vga640480:i_vga640480|vcnt[1] ;
+; r         ; vga640480:i_vga640480|vcnt[1] ; 9.026 ; 9.157 ; Rise       ; vga640480:i_vga640480|vcnt[1] ;
+; vs        ; vga640480:i_vga640480|vcnt[1] ;       ; 4.650 ; Rise       ; vga640480:i_vga640480|vcnt[1] ;
+; vs        ; vga640480:i_vga640480|vcnt[1] ; 4.878 ;       ; Fall       ; vga640480:i_vga640480|vcnt[1] ;
++-----------+-------------------------------+-------+-------+------------+-------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                                                          ;
++-----------+-------------------------------+-------+-------+------------+-------------------------------+
+; Data Port ; Clock Port                    ; Rise  ; Fall  ; Clock Edge ; Clock Reference               ;
++-----------+-------------------------------+-------+-------+------------+-------------------------------+
+; vs        ; XIHAO:xihao1|CounterY1[0]     ; 5.467 ;       ; Rise       ; XIHAO:xihao1|CounterY1[0]     ;
+; vs        ; XIHAO:xihao1|CounterY1[0]     ;       ; 5.192 ; Fall       ; XIHAO:xihao1|CounterY1[0]     ;
+; b         ; clk25MHz                      ; 5.088 ; 5.182 ; Rise       ; clk25MHz                      ;
+; g         ; clk25MHz                      ; 4.491 ; 4.566 ; Rise       ; clk25MHz                      ;
+; hs        ; clk25MHz                      ; 5.413 ; 5.663 ; Rise       ; clk25MHz                      ;
+; r         ; clk25MHz                      ; 4.612 ; 4.706 ; Rise       ; clk25MHz                      ;
+; vs        ; clk25MHz                      ; 5.550 ; 5.246 ; Rise       ; clk25MHz                      ;
+; b         ; vga640480:i_vga640480|vcnt[1] ; 5.385 ; 5.479 ; Rise       ; vga640480:i_vga640480|vcnt[1] ;
+; g         ; vga640480:i_vga640480|vcnt[1] ; 5.914 ; 5.975 ; Rise       ; vga640480:i_vga640480|vcnt[1] ;
+; r         ; vga640480:i_vga640480|vcnt[1] ; 4.909 ; 5.003 ; Rise       ; vga640480:i_vga640480|vcnt[1] ;
+; vs        ; vga640480:i_vga640480|vcnt[1] ;       ; 4.553 ; Rise       ; vga640480:i_vga640480|vcnt[1] ;
+; vs        ; vga640480:i_vga640480|vcnt[1] ; 4.776 ;       ; Fall       ; vga640480:i_vga640480|vcnt[1] ;
++-----------+-------------------------------+-------+-------+------------+-------------------------------+
+
+
++----------------------------------------------------------+
+; Propagation Delay                                        ;
++------------+-------------+-------+-------+-------+-------+
+; Input Port ; Output Port ; RR    ; RF    ; FR    ; FF    ;
++------------+-------------+-------+-------+-------+-------+
+; MS         ; b           ; 7.309 ; 7.416 ; 7.809 ; 7.916 ;
+; MS         ; g           ; 7.285 ; 7.356 ; 7.712 ; 7.790 ;
+; MS         ; hs          ; 5.807 ; 6.014 ; 6.433 ; 6.659 ;
+; MS         ; r           ; 7.326 ; 7.457 ; 7.767 ; 7.883 ;
+; MS         ; vs          ; 5.870 ; 5.687 ; 6.512 ; 6.310 ;
++------------+-------------+-------+-------+-------+-------+
+
+
++----------------------------------------------------------+
+; Minimum Propagation Delay                                ;
++------------+-------------+-------+-------+-------+-------+
+; Input Port ; Output Port ; RR    ; RF    ; FR    ; FF    ;
++------------+-------------+-------+-------+-------+-------+
+; MS         ; b           ; 5.552 ; 5.636 ; 6.219 ; 6.303 ;
+; MS         ; g           ; 5.229 ; 5.304 ; 5.942 ; 6.010 ;
+; MS         ; hs          ; 5.680 ; 5.882 ; 6.295 ; 6.516 ;
+; MS         ; r           ; 5.144 ; 5.238 ; 5.842 ; 5.929 ;
+; MS         ; vs          ; 5.743 ; 5.564 ; 6.374 ; 6.176 ;
++------------+-------------+-------+-------+-------+-------+
+
+
++---------------------------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                                               ;
++-----------------------------------+----------+---------+----------+---------+---------------------+
+; Clock                             ; Setup    ; Hold    ; Recovery ; Removal ; Minimum Pulse Width ;
++-----------------------------------+----------+---------+----------+---------+---------------------+
+; Worst-case Slack                  ; -8.328   ; -0.973  ; 0.0      ; 0.0     ; -3.201              ;
+;  VGA:vga1|clk1                    ; -1.935   ; -0.326  ; N/A      ; N/A     ; N/A                 ;
+;  VGA:vga1|clk2                    ; -5.950   ; 0.312   ; N/A      ; N/A     ; N/A                 ;
+;  XIHAO:xihao1|CounterY1[0]        ; -1.153   ; 0.138   ; N/A      ; N/A     ; N/A                 ;
+;  clk25MHz                         ; -8.328   ; -0.973  ; N/A      ; N/A     ; N/A                 ;
+;  clk50MHz                         ; -1.835   ; -0.342  ; N/A      ; N/A     ; N/A                 ;
+;  receiver:i_receiver|receive_flag ; -3.924   ; 0.396   ; N/A      ; N/A     ; N/A                 ;
+;  vga640480:i_vga640480|vcnt[1]    ; -4.345   ; -0.050  ; N/A      ; N/A     ; N/A                 ;
+; Design-wide TNS                   ; -723.497 ; -11.586 ; 0.0      ; 0.0     ; N/A                 ;
+;  VGA:vga1|clk1                    ; -10.445  ; -0.326  ; N/A      ; N/A     ; N/A                 ;
+;  VGA:vga1|clk2                    ; -59.881  ; 0.000   ; N/A      ; N/A     ; N/A                 ;
+;  XIHAO:xihao1|CounterY1[0]        ; -1.153   ; 0.000   ; N/A      ; N/A     ; N/A                 ;
+;  clk25MHz                         ; -549.035 ; -7.497  ; N/A      ; N/A     ; N/A                 ;
+;  clk50MHz                         ; -25.225  ; -3.620  ; N/A      ; N/A     ; N/A                 ;
+;  receiver:i_receiver|receive_flag ; -25.775  ; 0.000   ; N/A      ; N/A     ; N/A                 ;
+;  vga640480:i_vga640480|vcnt[1]    ; -51.983  ; -0.151  ; N/A      ; N/A     ; N/A                 ;
++-----------------------------------+----------+---------+----------+---------+---------------------+
+
+
++------------------------------------------------------------------------+
+; Setup Times                                                            ;
++-----------+------------+--------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+-------+------------+-----------------+
+; key_clk   ; clk50MHz   ; -0.093 ; 0.198 ; Rise       ; clk50MHz        ;
+; key_data  ; clk50MHz   ; 3.172  ; 3.370 ; Rise       ; clk50MHz        ;
++-----------+------------+--------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Hold Times                                                              ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; key_clk   ; clk50MHz   ; 0.648  ; 0.568  ; Rise       ; clk50MHz        ;
+; key_data  ; clk50MHz   ; -0.815 ; -1.408 ; Rise       ; clk50MHz        ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++----------------------------------------------------------------------------------------------------------+
+; Clock to Output Times                                                                                    ;
++-----------+-------------------------------+--------+--------+------------+-------------------------------+
+; Data Port ; Clock Port                    ; Rise   ; Fall   ; Clock Edge ; Clock Reference               ;
++-----------+-------------------------------+--------+--------+------------+-------------------------------+
+; vs        ; XIHAO:xihao1|CounterY1[0]     ; 10.892 ;        ; Rise       ; XIHAO:xihao1|CounterY1[0]     ;
+; vs        ; XIHAO:xihao1|CounterY1[0]     ;        ; 11.274 ; Fall       ; XIHAO:xihao1|CounterY1[0]     ;
+; b         ; clk25MHz                      ; 16.160 ; 15.714 ; Rise       ; clk25MHz                      ;
+; g         ; clk25MHz                      ; 13.925 ; 13.609 ; Rise       ; clk25MHz                      ;
+; hs        ; clk25MHz                      ; 14.329 ; 13.936 ; Rise       ; clk25MHz                      ;
+; r         ; clk25MHz                      ; 15.136 ; 14.904 ; Rise       ; clk25MHz                      ;
+; vs        ; clk25MHz                      ; 13.519 ; 13.999 ; Rise       ; clk25MHz                      ;
+; b         ; vga640480:i_vga640480|vcnt[1] ; 19.973 ; 19.527 ; Rise       ; vga640480:i_vga640480|vcnt[1] ;
+; g         ; vga640480:i_vga640480|vcnt[1] ; 19.773 ; 19.491 ; Rise       ; vga640480:i_vga640480|vcnt[1] ;
+; r         ; vga640480:i_vga640480|vcnt[1] ; 20.013 ; 19.722 ; Rise       ; vga640480:i_vga640480|vcnt[1] ;
+; vs        ; vga640480:i_vga640480|vcnt[1] ;        ; 9.662  ; Rise       ; vga640480:i_vga640480|vcnt[1] ;
+; vs        ; vga640480:i_vga640480|vcnt[1] ; 9.459  ;        ; Fall       ; vga640480:i_vga640480|vcnt[1] ;
++-----------+-------------------------------+--------+--------+------------+-------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                                                          ;
++-----------+-------------------------------+-------+-------+------------+-------------------------------+
+; Data Port ; Clock Port                    ; Rise  ; Fall  ; Clock Edge ; Clock Reference               ;
++-----------+-------------------------------+-------+-------+------------+-------------------------------+
+; vs        ; XIHAO:xihao1|CounterY1[0]     ; 5.467 ;       ; Rise       ; XIHAO:xihao1|CounterY1[0]     ;
+; vs        ; XIHAO:xihao1|CounterY1[0]     ;       ; 5.192 ; Fall       ; XIHAO:xihao1|CounterY1[0]     ;
+; b         ; clk25MHz                      ; 5.088 ; 5.182 ; Rise       ; clk25MHz                      ;
+; g         ; clk25MHz                      ; 4.491 ; 4.566 ; Rise       ; clk25MHz                      ;
+; hs        ; clk25MHz                      ; 5.413 ; 5.663 ; Rise       ; clk25MHz                      ;
+; r         ; clk25MHz                      ; 4.612 ; 4.706 ; Rise       ; clk25MHz                      ;
+; vs        ; clk25MHz                      ; 5.550 ; 5.246 ; Rise       ; clk25MHz                      ;
+; b         ; vga640480:i_vga640480|vcnt[1] ; 5.385 ; 5.479 ; Rise       ; vga640480:i_vga640480|vcnt[1] ;
+; g         ; vga640480:i_vga640480|vcnt[1] ; 5.914 ; 5.975 ; Rise       ; vga640480:i_vga640480|vcnt[1] ;
+; r         ; vga640480:i_vga640480|vcnt[1] ; 4.909 ; 5.003 ; Rise       ; vga640480:i_vga640480|vcnt[1] ;
+; vs        ; vga640480:i_vga640480|vcnt[1] ;       ; 4.553 ; Rise       ; vga640480:i_vga640480|vcnt[1] ;
+; vs        ; vga640480:i_vga640480|vcnt[1] ; 4.776 ;       ; Fall       ; vga640480:i_vga640480|vcnt[1] ;
++-----------+-------------------------------+-------+-------+------------+-------------------------------+
+
+
++--------------------------------------------------------------+
+; Progagation Delay                                            ;
++------------+-------------+--------+--------+--------+--------+
+; Input Port ; Output Port ; RR     ; RF     ; FR     ; FF     ;
++------------+-------------+--------+--------+--------+--------+
+; MS         ; b           ; 15.822 ; 15.376 ; 16.113 ; 15.667 ;
+; MS         ; g           ; 15.521 ; 15.232 ; 15.913 ; 15.631 ;
+; MS         ; hs          ; 11.858 ; 11.665 ; 12.097 ; 11.948 ;
+; MS         ; r           ; 15.708 ; 15.508 ; 16.153 ; 15.862 ;
+; MS         ; vs          ; 11.501 ; 11.662 ; 11.700 ; 11.818 ;
++------------+-------------+--------+--------+--------+--------+
+
+
++----------------------------------------------------------+
+; Minimum Progagation Delay                                ;
++------------+-------------+-------+-------+-------+-------+
+; Input Port ; Output Port ; RR    ; RF    ; FR    ; FF    ;
++------------+-------------+-------+-------+-------+-------+
+; MS         ; b           ; 5.552 ; 5.636 ; 6.219 ; 6.303 ;
+; MS         ; g           ; 5.229 ; 5.304 ; 5.942 ; 6.010 ;
+; MS         ; hs          ; 5.680 ; 5.882 ; 6.295 ; 6.516 ;
+; MS         ; r           ; 5.144 ; 5.238 ; 5.842 ; 5.929 ;
+; MS         ; vs          ; 5.743 ; 5.564 ; 6.374 ; 6.176 ;
++------------+-------------+-------+-------+-------+-------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Board Trace Model Assignments                                                                                                                                                                                                                                                                                                                                    ;
++---------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+
+; Pin           ; I/O Standard ; Near Tline Length ; Near Tline L per Length ; Near Tline C per Length ; Near Series R ; Near Differential R ; Near Pull-up R ; Near Pull-down R ; Near C ; Far Tline Length ; Far Tline L per Length ; Far Tline C per Length ; Far Series R ; Far Pull-up R ; Far Pull-down R ; Far C ; Termination Voltage ; Far Differential R ;
++---------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+
+; r             ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ;
+; g             ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ;
+; b             ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ;
+; hs            ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ;
+; vs            ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ;
+; ~ALTERA_DCLK~ ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ;
+; ~ALTERA_nCEO~ ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ;
++---------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+
+
+
++----------------------------------------------------------------------------+
+; Input Transition Times                                                     ;
++-------------------------+--------------+-----------------+-----------------+
+; Pin                     ; I/O Standard ; 10-90 Rise Time ; 90-10 Fall Time ;
++-------------------------+--------------+-----------------+-----------------+
+; MS                      ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; clk50MHz                ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; key_data                ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; key_clk                 ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; ~ALTERA_ASDO_DATA1~     ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; ~ALTERA_FLASH_nCE_nCSO~ ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; ~ALTERA_DATA0~          ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
++-------------------------+--------------+-----------------+-----------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Corner Signal Integrity Metrics                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; Pin           ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; r             ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 2.9e-007 V                   ; 2.35 V              ; -0.00119 V          ; 0.061 V                              ; 0.002 V                              ; 4.84e-010 s                 ; 4.97e-010 s                 ; Yes                        ; Yes                        ; 2.32 V                      ; 2.9e-007 V                  ; 2.35 V             ; -0.00119 V         ; 0.061 V                             ; 0.002 V                             ; 4.84e-010 s                ; 4.97e-010 s                ; Yes                       ; Yes                       ;
+; g             ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.95e-007 V                  ; 2.34 V              ; -0.00565 V          ; 0.078 V                              ; 0.022 V                              ; 9.09e-010 s                 ; 8.84e-010 s                 ; Yes                        ; Yes                        ; 2.32 V                      ; 1.95e-007 V                 ; 2.34 V             ; -0.00565 V         ; 0.078 V                             ; 0.022 V                             ; 9.09e-010 s                ; 8.84e-010 s                ; Yes                       ; Yes                       ;
+; b             ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.95e-007 V                  ; 2.34 V              ; -0.00565 V          ; 0.078 V                              ; 0.022 V                              ; 9.09e-010 s                 ; 8.84e-010 s                 ; Yes                        ; Yes                        ; 2.32 V                      ; 1.95e-007 V                 ; 2.34 V             ; -0.00565 V         ; 0.078 V                             ; 0.022 V                             ; 9.09e-010 s                ; 8.84e-010 s                ; Yes                       ; Yes                       ;
+; hs            ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 2.9e-007 V                   ; 2.33 V              ; -0.002 V            ; 0.092 V                              ; 0.05 V                               ; 3.78e-009 s                 ; 3.59e-009 s                 ; Yes                        ; Yes                        ; 2.32 V                      ; 2.9e-007 V                  ; 2.33 V             ; -0.002 V           ; 0.092 V                             ; 0.05 V                              ; 3.78e-009 s                ; 3.59e-009 s                ; Yes                       ; Yes                       ;
+; vs            ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 2.9e-007 V                   ; 2.33 V              ; -0.002 V            ; 0.092 V                              ; 0.05 V                               ; 3.78e-009 s                 ; 3.59e-009 s                 ; Yes                        ; Yes                        ; 2.32 V                      ; 2.9e-007 V                  ; 2.33 V             ; -0.002 V           ; 0.092 V                             ; 0.05 V                              ; 3.78e-009 s                ; 3.59e-009 s                ; Yes                       ; Yes                       ;
+; ~ALTERA_DCLK~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.53e-007 V                  ; 2.34 V              ; -0.00825 V          ; 0.106 V                              ; 0.017 V                              ; 6.53e-010 s                 ; 5.54e-010 s                 ; Yes                        ; Yes                        ; 2.32 V                      ; 1.53e-007 V                 ; 2.34 V             ; -0.00825 V         ; 0.106 V                             ; 0.017 V                             ; 6.53e-010 s                ; 5.54e-010 s                ; Yes                       ; Yes                       ;
+; ~ALTERA_nCEO~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 2.51e-007 V                  ; 2.34 V              ; -0.00345 V          ; 0.118 V                              ; 0.017 V                              ; 8.67e-010 s                 ; 1.08e-009 s                 ; Yes                        ; Yes                        ; 2.32 V                      ; 2.51e-007 V                 ; 2.34 V             ; -0.00345 V         ; 0.118 V                             ; 0.017 V                             ; 8.67e-010 s                ; 1.08e-009 s                ; Yes                       ; Yes                       ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Corner Signal Integrity Metrics                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; Pin           ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; r             ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.11e-008 V                  ; 2.73 V              ; -0.0566 V           ; 0.191 V                              ; 0.12 V                               ; 2.69e-010 s                 ; 2.76e-010 s                 ; Yes                        ; Yes                        ; 2.62 V                      ; 4.11e-008 V                 ; 2.73 V             ; -0.0566 V          ; 0.191 V                             ; 0.12 V                              ; 2.69e-010 s                ; 2.76e-010 s                ; Yes                       ; Yes                       ;
+; g             ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 2.78e-008 V                  ; 2.71 V              ; -0.0351 V           ; 0.253 V                              ; 0.068 V                              ; 4.96e-010 s                 ; 5.19e-010 s                 ; No                         ; Yes                        ; 2.62 V                      ; 2.78e-008 V                 ; 2.71 V             ; -0.0351 V          ; 0.253 V                             ; 0.068 V                             ; 4.96e-010 s                ; 5.19e-010 s                ; No                        ; Yes                       ;
+; b             ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 2.78e-008 V                  ; 2.71 V              ; -0.0351 V           ; 0.253 V                              ; 0.068 V                              ; 4.96e-010 s                 ; 5.19e-010 s                 ; No                         ; Yes                        ; 2.62 V                      ; 2.78e-008 V                 ; 2.71 V             ; -0.0351 V          ; 0.253 V                             ; 0.068 V                             ; 4.96e-010 s                ; 5.19e-010 s                ; No                        ; Yes                       ;
+; hs            ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.11e-008 V                  ; 2.64 V              ; -0.011 V            ; 0.212 V                              ; 0.198 V                              ; 2.38e-009 s                 ; 2.29e-009 s                 ; No                         ; Yes                        ; 2.62 V                      ; 4.11e-008 V                 ; 2.64 V             ; -0.011 V           ; 0.212 V                             ; 0.198 V                             ; 2.38e-009 s                ; 2.29e-009 s                ; No                        ; Yes                       ;
+; vs            ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.11e-008 V                  ; 2.64 V              ; -0.011 V            ; 0.212 V                              ; 0.198 V                              ; 2.38e-009 s                 ; 2.29e-009 s                 ; No                         ; Yes                        ; 2.62 V                      ; 4.11e-008 V                 ; 2.64 V             ; -0.011 V           ; 0.212 V                             ; 0.198 V                             ; 2.38e-009 s                ; 2.29e-009 s                ; No                        ; Yes                       ;
+; ~ALTERA_DCLK~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 2.19e-008 V                  ; 2.72 V              ; -0.0748 V           ; 0.28 V                               ; 0.169 V                              ; 3.1e-010 s                  ; 3.01e-010 s                 ; No                         ; Yes                        ; 2.62 V                      ; 2.19e-008 V                 ; 2.72 V             ; -0.0748 V          ; 0.28 V                              ; 0.169 V                             ; 3.1e-010 s                 ; 3.01e-010 s                ; No                        ; Yes                       ;
+; ~ALTERA_nCEO~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 3.53e-008 V                  ; 2.7 V               ; -0.021 V            ; 0.204 V                              ; 0.05 V                               ; 4.85e-010 s                 ; 6.73e-010 s                 ; No                         ; Yes                        ; 2.62 V                      ; 3.53e-008 V                 ; 2.7 V              ; -0.021 V           ; 0.204 V                             ; 0.05 V                              ; 4.85e-010 s                ; 6.73e-010 s                ; No                        ; Yes                       ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Setup Transfers                                                                                                 ;
++----------------------------------+----------------------------------+----------+----------+----------+----------+
+; From Clock                       ; To Clock                         ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++----------------------------------+----------------------------------+----------+----------+----------+----------+
+; clk25MHz                         ; clk25MHz                         ; 3098     ; 0        ; 0        ; 0        ;
+; vga640480:i_vga640480|vcnt[1]    ; clk25MHz                         ; 1203     ; 61       ; 0        ; 0        ;
+; VGA:vga1|clk1                    ; clk25MHz                         ; 1        ; 1        ; 0        ; 0        ;
+; VGA:vga1|clk2                    ; clk25MHz                         ; 736      ; 0        ; 0        ; 0        ;
+; XIHAO:xihao1|CounterY1[0]        ; clk25MHz                         ; 42       ; 42       ; 0        ; 0        ;
+; clk25MHz                         ; clk50MHz                         ; 1        ; 1        ; 0        ; 0        ;
+; clk50MHz                         ; clk50MHz                         ; 108      ; 0        ; 0        ; 0        ;
+; receiver:i_receiver|receive_flag ; clk50MHz                         ; 14       ; 14       ; 0        ; 0        ;
+; clk50MHz                         ; receiver:i_receiver|receive_flag ; 163      ; 0        ; 0        ; 0        ;
+; receiver:i_receiver|receive_flag ; vga640480:i_vga640480|vcnt[1]    ; 201      ; 0        ; 0        ; 0        ;
+; vga640480:i_vga640480|vcnt[1]    ; vga640480:i_vga640480|vcnt[1]    ; 253      ; 0        ; 0        ; 0        ;
+; VGA:vga1|clk1                    ; VGA:vga1|clk1                    ; 56       ; 0        ; 0        ; 0        ;
+; VGA:vga1|clk2                    ; VGA:vga1|clk1                    ; 1        ; 1        ; 0        ; 0        ;
+; VGA:vga1|clk2                    ; VGA:vga1|clk2                    ; 386      ; 0        ; 0        ; 0        ;
+; XIHAO:xihao1|CounterY1[0]        ; VGA:vga1|clk2                    ; 0        ; 1        ; 0        ; 0        ;
+; receiver:i_receiver|receive_flag ; XIHAO:xihao1|CounterY1[0]        ; 0        ; 0        ; 8        ; 0        ;
+; XIHAO:xihao1|CounterY1[0]        ; XIHAO:xihao1|CounterY1[0]        ; 0        ; 0        ; 0        ; 1        ;
++----------------------------------+----------------------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Hold Transfers                                                                                                  ;
++----------------------------------+----------------------------------+----------+----------+----------+----------+
+; From Clock                       ; To Clock                         ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++----------------------------------+----------------------------------+----------+----------+----------+----------+
+; clk25MHz                         ; clk25MHz                         ; 3098     ; 0        ; 0        ; 0        ;
+; vga640480:i_vga640480|vcnt[1]    ; clk25MHz                         ; 1203     ; 61       ; 0        ; 0        ;
+; VGA:vga1|clk1                    ; clk25MHz                         ; 1        ; 1        ; 0        ; 0        ;
+; VGA:vga1|clk2                    ; clk25MHz                         ; 736      ; 0        ; 0        ; 0        ;
+; XIHAO:xihao1|CounterY1[0]        ; clk25MHz                         ; 42       ; 42       ; 0        ; 0        ;
+; clk25MHz                         ; clk50MHz                         ; 1        ; 1        ; 0        ; 0        ;
+; clk50MHz                         ; clk50MHz                         ; 108      ; 0        ; 0        ; 0        ;
+; receiver:i_receiver|receive_flag ; clk50MHz                         ; 14       ; 14       ; 0        ; 0        ;
+; clk50MHz                         ; receiver:i_receiver|receive_flag ; 163      ; 0        ; 0        ; 0        ;
+; receiver:i_receiver|receive_flag ; vga640480:i_vga640480|vcnt[1]    ; 201      ; 0        ; 0        ; 0        ;
+; vga640480:i_vga640480|vcnt[1]    ; vga640480:i_vga640480|vcnt[1]    ; 253      ; 0        ; 0        ; 0        ;
+; VGA:vga1|clk1                    ; VGA:vga1|clk1                    ; 56       ; 0        ; 0        ; 0        ;
+; VGA:vga1|clk2                    ; VGA:vga1|clk1                    ; 1        ; 1        ; 0        ; 0        ;
+; VGA:vga1|clk2                    ; VGA:vga1|clk2                    ; 386      ; 0        ; 0        ; 0        ;
+; XIHAO:xihao1|CounterY1[0]        ; VGA:vga1|clk2                    ; 0        ; 1        ; 0        ; 0        ;
+; receiver:i_receiver|receive_flag ; XIHAO:xihao1|CounterY1[0]        ; 0        ; 0        ; 8        ; 0        ;
+; XIHAO:xihao1|CounterY1[0]        ; XIHAO:xihao1|CounterY1[0]        ; 0        ; 0        ; 0        ; 1        ;
++----------------------------------+----------------------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design.
+
+
+---------------
+; Report RSKM ;
+---------------
+No dedicated SERDES Receiver circuitry present in device or used in design.
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 3     ; 3    ;
+; Unconstrained Input Port Paths  ; 8     ; 8    ;
+; Unconstrained Output Ports      ; 5     ; 5    ;
+; Unconstrained Output Port Paths ; 120   ; 120  ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II TimeQuest Timing Analyzer
+    Info: Version 8.1 Build 163 10/28/2008 SJ Full Version
+    Info: Processing started: Sat Sep 21 10:06:17 2019
+Info: Command: quartus_sta game -c game
+Info: qsta_default_script.tcl version: #2
+Info: Parallel compilation is enabled and will use 4 of the 4 processors detected
+Warning: Timing Analysis is analyzing one or more combinational loops as latches
+    Warning: Node "i_receiver|key_code[0]|combout" is a latch
+    Warning: Node "i_receiver|key_code[3]|combout" is a latch
+    Warning: Node "i_receiver|key_code[1]|combout" is a latch
+    Warning: Node "i_receiver|key_code[4]|combout" is a latch
+    Warning: Node "i_receiver|key_code[2]|combout" is a latch
+    Warning: Node "i_receiver|key_code[5]|combout" is a latch
+    Warning: Node "i_receiver|key_code[6]|combout" is a latch
+    Warning: Node "i_mid|count_tempv[2]|combout" is a latch
+    Warning: Node "i_mid|count_tempv[3]|combout" is a latch
+    Warning: Node "i_mid|count_tempv[4]|combout" is a latch
+    Warning: Node "i_mid|count_tempv[5]|combout" is a latch
+    Warning: Node "i_mid|count_tempv[6]|combout" is a latch
+Critical Warning: Synopsys Design Constraints File file not found: 'game.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info: No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info: Deriving Clocks
+    Info: create_clock -period 1.000 -name vga640480:i_vga640480|vcnt[1] vga640480:i_vga640480|vcnt[1]
+    Info: create_clock -period 1.000 -name clk25MHz clk25MHz
+    Info: create_clock -period 1.000 -name clk50MHz clk50MHz
+    Info: create_clock -period 1.000 -name VGA:vga1|clk2 VGA:vga1|clk2
+    Info: create_clock -period 1.000 -name VGA:vga1|clk1 VGA:vga1|clk1
+    Info: create_clock -period 1.000 -name XIHAO:xihao1|CounterY1[0] XIHAO:xihao1|CounterY1[0]
+    Info: create_clock -period 1.000 -name receiver:i_receiver|receive_flag receiver:i_receiver|receive_flag
+Warning: The following clock transfers have no clock uncertainty assignment
+    Warning: From vga640480:i_vga640480|vcnt[1] (Rise) to vga640480:i_vga640480|vcnt[1] (Rise) (setup and hold)
+    Warning: From vga640480:i_vga640480|vcnt[1] (Fall) to vga640480:i_vga640480|vcnt[1] (Rise) (setup and hold)
+    Warning: From clk25MHz (Rise) to vga640480:i_vga640480|vcnt[1] (Rise) (setup and hold)
+    Warning: From receiver:i_receiver|receive_flag (Rise) to vga640480:i_vga640480|vcnt[1] (Rise) (setup and hold)
+    Warning: From vga640480:i_vga640480|vcnt[1] (Rise) to vga640480:i_vga640480|vcnt[1] (Fall) (setup and hold)
+    Warning: From vga640480:i_vga640480|vcnt[1] (Fall) to vga640480:i_vga640480|vcnt[1] (Fall) (setup and hold)
+    Warning: From clk25MHz (Rise) to vga640480:i_vga640480|vcnt[1] (Fall) (setup and hold)
+    Warning: From vga640480:i_vga640480|vcnt[1] (Rise) to clk25MHz (Rise) (setup and hold)
+    Warning: From vga640480:i_vga640480|vcnt[1] (Fall) to clk25MHz (Rise) (setup and hold)
+    Warning: From clk25MHz (Rise) to clk25MHz (Rise) (setup and hold)
+    Warning: From clk25MHz (Fall) to clk25MHz (Rise) (setup and hold)
+    Warning: From VGA:vga1|clk2 (Rise) to clk25MHz (Rise) (setup and hold)
+    Warning: From VGA:vga1|clk1 (Rise) to clk25MHz (Rise) (setup and hold)
+    Warning: From VGA:vga1|clk1 (Fall) to clk25MHz (Rise) (setup and hold)
+    Warning: From XIHAO:xihao1|CounterY1[0] (Rise) to clk25MHz (Rise) (setup and hold)
+    Warning: From XIHAO:xihao1|CounterY1[0] (Fall) to clk25MHz (Rise) (setup and hold)
+    Warning: From clk25MHz (Rise) to clk25MHz (Fall) (setup and hold)
+    Warning: From clk25MHz (Fall) to clk25MHz (Fall) (setup and hold)
+    Warning: From clk25MHz (Rise) to clk50MHz (Rise) (setup and hold)
+    Warning: From clk25MHz (Fall) to clk50MHz (Rise) (setup and hold)
+    Warning: From clk50MHz (Rise) to clk50MHz (Rise) (setup and hold)
+    Warning: From receiver:i_receiver|receive_flag (Rise) to clk50MHz (Rise) (setup and hold)
+    Warning: From receiver:i_receiver|receive_flag (Fall) to clk50MHz (Rise) (setup and hold)
+    Warning: From VGA:vga1|clk2 (Rise) to VGA:vga1|clk2 (Rise) (setup and hold)
+    Warning: From VGA:vga1|clk2 (Fall) to VGA:vga1|clk2 (Rise) (setup and hold)
+    Warning: From VGA:vga1|clk1 (Rise) to VGA:vga1|clk2 (Rise) (setup and hold)
+    Warning: From XIHAO:xihao1|CounterY1[0] (Fall) to VGA:vga1|clk2 (Rise) (setup and hold)
+    Warning: From VGA:vga1|clk2 (Rise) to VGA:vga1|clk2 (Fall) (setup and hold)
+    Warning: From VGA:vga1|clk2 (Fall) to VGA:vga1|clk2 (Fall) (setup and hold)
+    Warning: From VGA:vga1|clk1 (Rise) to VGA:vga1|clk2 (Fall) (setup and hold)
+    Warning: From clk25MHz (Rise) to VGA:vga1|clk1 (Rise) (setup and hold)
+    Warning: From VGA:vga1|clk2 (Rise) to VGA:vga1|clk1 (Rise) (setup and hold)
+    Warning: From VGA:vga1|clk2 (Fall) to VGA:vga1|clk1 (Rise) (setup and hold)
+    Warning: From VGA:vga1|clk1 (Rise) to VGA:vga1|clk1 (Rise) (setup and hold)
+    Warning: From VGA:vga1|clk1 (Fall) to VGA:vga1|clk1 (Rise) (setup and hold)
+    Warning: From clk25MHz (Rise) to VGA:vga1|clk1 (Fall) (setup and hold)
+    Warning: From VGA:vga1|clk1 (Rise) to VGA:vga1|clk1 (Fall) (setup and hold)
+    Warning: From VGA:vga1|clk1 (Fall) to VGA:vga1|clk1 (Fall) (setup and hold)
+    Warning: From clk25MHz (Rise) to XIHAO:xihao1|CounterY1[0] (Rise) (setup and hold)
+    Warning: From XIHAO:xihao1|CounterY1[0] (Rise) to XIHAO:xihao1|CounterY1[0] (Rise) (setup and hold)
+    Warning: From XIHAO:xihao1|CounterY1[0] (Fall) to XIHAO:xihao1|CounterY1[0] (Rise) (setup and hold)
+    Warning: From clk25MHz (Rise) to XIHAO:xihao1|CounterY1[0] (Fall) (setup and hold)
+    Warning: From XIHAO:xihao1|CounterY1[0] (Rise) to XIHAO:xihao1|CounterY1[0] (Fall) (setup and hold)
+    Warning: From XIHAO:xihao1|CounterY1[0] (Fall) to XIHAO:xihao1|CounterY1[0] (Fall) (setup and hold)
+    Warning: From receiver:i_receiver|receive_flag (Rise) to XIHAO:xihao1|CounterY1[0] (Fall) (setup and hold)
+    Warning: From clk50MHz (Rise) to receiver:i_receiver|receive_flag (Rise) (setup and hold)
+    Warning: From receiver:i_receiver|receive_flag (Rise) to receiver:i_receiver|receive_flag (Rise) (setup and hold)
+    Warning: From receiver:i_receiver|receive_flag (Fall) to receiver:i_receiver|receive_flag (Rise) (setup and hold)
+    Warning: From clk50MHz (Rise) to receiver:i_receiver|receive_flag (Fall) (setup and hold)
+    Warning: From receiver:i_receiver|receive_flag (Rise) to receiver:i_receiver|receive_flag (Fall) (setup and hold)
+    Warning: From receiver:i_receiver|receive_flag (Fall) to receiver:i_receiver|receive_flag (Fall) (setup and hold)
+Info: Analyzing Slow 1200mV 85C Model
+Critical Warning: Timing requirements not met
+Info: Worst-case setup slack is -8.328
+    Info:     Slack End Point TNS Clock 
+    Info: ========= ============= =====================
+    Info:    -8.328      -549.035 clk25MHz 
+    Info:    -5.950       -59.881 VGA:vga1|clk2 
+    Info:    -4.345       -51.983 vga640480:i_vga640480|vcnt[1] 
+    Info:    -3.924       -25.775 receiver:i_receiver|receive_flag 
+    Info:    -1.935       -10.445 VGA:vga1|clk1 
+    Info:    -1.835       -25.225 clk50MHz 
+    Info:    -1.153        -1.153 XIHAO:xihao1|CounterY1[0] 
+Info: Worst-case hold slack is -0.973
+    Info:     Slack End Point TNS Clock 
+    Info: ========= ============= =====================
+    Info:    -0.973        -5.968 clk25MHz 
+    Info:    -0.342        -1.067 clk50MHz 
+    Info:    -0.326        -0.326 VGA:vga1|clk1 
+    Info:     0.275         0.000 vga640480:i_vga640480|vcnt[1] 
+    Info:     0.335         0.000 XIHAO:xihao1|CounterY1[0] 
+    Info:     0.775         0.000 VGA:vga1|clk2 
+    Info:     0.908         0.000 receiver:i_receiver|receive_flag 
+Info: No recovery paths to report
+Info: No removal paths to report
+Critical Warning: Found minimum pulse width or period violations. See Report Minimum Pulse Width for details.
+Info: Analyzing Slow 1200mV 0C Model
+Info: Started post-fitting delay annotation
+Info: Delay annotation completed successfully
+Warning: The following clock transfers have no clock uncertainty assignment
+    Warning: From vga640480:i_vga640480|vcnt[1] (Rise) to vga640480:i_vga640480|vcnt[1] (Rise) (setup and hold)
+    Warning: From vga640480:i_vga640480|vcnt[1] (Fall) to vga640480:i_vga640480|vcnt[1] (Rise) (setup and hold)
+    Warning: From clk25MHz (Rise) to vga640480:i_vga640480|vcnt[1] (Rise) (setup and hold)
+    Warning: From receiver:i_receiver|receive_flag (Rise) to vga640480:i_vga640480|vcnt[1] (Rise) (setup and hold)
+    Warning: From vga640480:i_vga640480|vcnt[1] (Rise) to vga640480:i_vga640480|vcnt[1] (Fall) (setup and hold)
+    Warning: From vga640480:i_vga640480|vcnt[1] (Fall) to vga640480:i_vga640480|vcnt[1] (Fall) (setup and hold)
+    Warning: From clk25MHz (Rise) to vga640480:i_vga640480|vcnt[1] (Fall) (setup and hold)
+    Warning: From vga640480:i_vga640480|vcnt[1] (Rise) to clk25MHz (Rise) (setup and hold)
+    Warning: From vga640480:i_vga640480|vcnt[1] (Fall) to clk25MHz (Rise) (setup and hold)
+    Warning: From clk25MHz (Rise) to clk25MHz (Rise) (setup and hold)
+    Warning: From clk25MHz (Fall) to clk25MHz (Rise) (setup and hold)
+    Warning: From VGA:vga1|clk2 (Rise) to clk25MHz (Rise) (setup and hold)
+    Warning: From VGA:vga1|clk1 (Rise) to clk25MHz (Rise) (setup and hold)
+    Warning: From VGA:vga1|clk1 (Fall) to clk25MHz (Rise) (setup and hold)
+    Warning: From XIHAO:xihao1|CounterY1[0] (Rise) to clk25MHz (Rise) (setup and hold)
+    Warning: From XIHAO:xihao1|CounterY1[0] (Fall) to clk25MHz (Rise) (setup and hold)
+    Warning: From clk25MHz (Rise) to clk25MHz (Fall) (setup and hold)
+    Warning: From clk25MHz (Fall) to clk25MHz (Fall) (setup and hold)
+    Warning: From clk25MHz (Rise) to clk50MHz (Rise) (setup and hold)
+    Warning: From clk25MHz (Fall) to clk50MHz (Rise) (setup and hold)
+    Warning: From clk50MHz (Rise) to clk50MHz (Rise) (setup and hold)
+    Warning: From receiver:i_receiver|receive_flag (Rise) to clk50MHz (Rise) (setup and hold)
+    Warning: From receiver:i_receiver|receive_flag (Fall) to clk50MHz (Rise) (setup and hold)
+    Warning: From VGA:vga1|clk2 (Rise) to VGA:vga1|clk2 (Rise) (setup and hold)
+    Warning: From VGA:vga1|clk2 (Fall) to VGA:vga1|clk2 (Rise) (setup and hold)
+    Warning: From VGA:vga1|clk1 (Rise) to VGA:vga1|clk2 (Rise) (setup and hold)
+    Warning: From XIHAO:xihao1|CounterY1[0] (Fall) to VGA:vga1|clk2 (Rise) (setup and hold)
+    Warning: From VGA:vga1|clk2 (Rise) to VGA:vga1|clk2 (Fall) (setup and hold)
+    Warning: From VGA:vga1|clk2 (Fall) to VGA:vga1|clk2 (Fall) (setup and hold)
+    Warning: From VGA:vga1|clk1 (Rise) to VGA:vga1|clk2 (Fall) (setup and hold)
+    Warning: From clk25MHz (Rise) to VGA:vga1|clk1 (Rise) (setup and hold)
+    Warning: From VGA:vga1|clk2 (Rise) to VGA:vga1|clk1 (Rise) (setup and hold)
+    Warning: From VGA:vga1|clk2 (Fall) to VGA:vga1|clk1 (Rise) (setup and hold)
+    Warning: From VGA:vga1|clk1 (Rise) to VGA:vga1|clk1 (Rise) (setup and hold)
+    Warning: From VGA:vga1|clk1 (Fall) to VGA:vga1|clk1 (Rise) (setup and hold)
+    Warning: From clk25MHz (Rise) to VGA:vga1|clk1 (Fall) (setup and hold)
+    Warning: From VGA:vga1|clk1 (Rise) to VGA:vga1|clk1 (Fall) (setup and hold)
+    Warning: From VGA:vga1|clk1 (Fall) to VGA:vga1|clk1 (Fall) (setup and hold)
+    Warning: From clk25MHz (Rise) to XIHAO:xihao1|CounterY1[0] (Rise) (setup and hold)
+    Warning: From XIHAO:xihao1|CounterY1[0] (Rise) to XIHAO:xihao1|CounterY1[0] (Rise) (setup and hold)
+    Warning: From XIHAO:xihao1|CounterY1[0] (Fall) to XIHAO:xihao1|CounterY1[0] (Rise) (setup and hold)
+    Warning: From clk25MHz (Rise) to XIHAO:xihao1|CounterY1[0] (Fall) (setup and hold)
+    Warning: From XIHAO:xihao1|CounterY1[0] (Rise) to XIHAO:xihao1|CounterY1[0] (Fall) (setup and hold)
+    Warning: From XIHAO:xihao1|CounterY1[0] (Fall) to XIHAO:xihao1|CounterY1[0] (Fall) (setup and hold)
+    Warning: From receiver:i_receiver|receive_flag (Rise) to XIHAO:xihao1|CounterY1[0] (Fall) (setup and hold)
+    Warning: From clk50MHz (Rise) to receiver:i_receiver|receive_flag (Rise) (setup and hold)
+    Warning: From receiver:i_receiver|receive_flag (Rise) to receiver:i_receiver|receive_flag (Rise) (setup and hold)
+    Warning: From receiver:i_receiver|receive_flag (Fall) to receiver:i_receiver|receive_flag (Rise) (setup and hold)
+    Warning: From clk50MHz (Rise) to receiver:i_receiver|receive_flag (Fall) (setup and hold)
+    Warning: From receiver:i_receiver|receive_flag (Rise) to receiver:i_receiver|receive_flag (Fall) (setup and hold)
+    Warning: From receiver:i_receiver|receive_flag (Fall) to receiver:i_receiver|receive_flag (Fall) (setup and hold)
+Critical Warning: Timing requirements not met
+Info: Worst-case setup slack is -7.491
+    Info:     Slack End Point TNS Clock 
+    Info: ========= ============= =====================
+    Info:    -7.491      -503.437 clk25MHz 
+    Info:    -5.406       -54.637 VGA:vga1|clk2 
+    Info:    -4.021       -47.719 vga640480:i_vga640480|vcnt[1] 
+    Info:    -3.639       -23.771 receiver:i_receiver|receive_flag 
+    Info:    -1.692        -8.745 VGA:vga1|clk1 
+    Info:    -1.602       -21.873 clk50MHz 
+    Info:    -1.020        -1.020 XIHAO:xihao1|CounterY1[0] 
+Info: Worst-case hold slack is -0.845
+    Info:     Slack End Point TNS Clock 
+    Info: ========= ============= =====================
+    Info:    -0.845        -6.210 clk25MHz 
+    Info:    -0.323        -0.372 clk50MHz 
+    Info:    -0.202        -0.202 VGA:vga1|clk1 
+    Info:     0.289         0.000 XIHAO:xihao1|CounterY1[0] 
+    Info:     0.312         0.000 vga640480:i_vga640480|vcnt[1] 
+    Info:     0.723         0.000 VGA:vga1|clk2 
+    Info:     0.772         0.000 receiver:i_receiver|receive_flag 
+Info: No recovery paths to report
+Info: No removal paths to report
+Critical Warning: Found minimum pulse width or period violations. See Report Minimum Pulse Width for details.
+Info: Analyzing Fast 1200mV 0C Model
+Info: Started post-fitting delay annotation
+Info: Delay annotation completed successfully
+Warning: The following clock transfers have no clock uncertainty assignment
+    Warning: From vga640480:i_vga640480|vcnt[1] (Rise) to vga640480:i_vga640480|vcnt[1] (Rise) (setup and hold)
+    Warning: From vga640480:i_vga640480|vcnt[1] (Fall) to vga640480:i_vga640480|vcnt[1] (Rise) (setup and hold)
+    Warning: From clk25MHz (Rise) to vga640480:i_vga640480|vcnt[1] (Rise) (setup and hold)
+    Warning: From receiver:i_receiver|receive_flag (Rise) to vga640480:i_vga640480|vcnt[1] (Rise) (setup and hold)
+    Warning: From vga640480:i_vga640480|vcnt[1] (Rise) to vga640480:i_vga640480|vcnt[1] (Fall) (setup and hold)
+    Warning: From vga640480:i_vga640480|vcnt[1] (Fall) to vga640480:i_vga640480|vcnt[1] (Fall) (setup and hold)
+    Warning: From clk25MHz (Rise) to vga640480:i_vga640480|vcnt[1] (Fall) (setup and hold)
+    Warning: From vga640480:i_vga640480|vcnt[1] (Rise) to clk25MHz (Rise) (setup and hold)
+    Warning: From vga640480:i_vga640480|vcnt[1] (Fall) to clk25MHz (Rise) (setup and hold)
+    Warning: From clk25MHz (Rise) to clk25MHz (Rise) (setup and hold)
+    Warning: From clk25MHz (Fall) to clk25MHz (Rise) (setup and hold)
+    Warning: From VGA:vga1|clk2 (Rise) to clk25MHz (Rise) (setup and hold)
+    Warning: From VGA:vga1|clk1 (Rise) to clk25MHz (Rise) (setup and hold)
+    Warning: From VGA:vga1|clk1 (Fall) to clk25MHz (Rise) (setup and hold)
+    Warning: From XIHAO:xihao1|CounterY1[0] (Rise) to clk25MHz (Rise) (setup and hold)
+    Warning: From XIHAO:xihao1|CounterY1[0] (Fall) to clk25MHz (Rise) (setup and hold)
+    Warning: From clk25MHz (Rise) to clk25MHz (Fall) (setup and hold)
+    Warning: From clk25MHz (Fall) to clk25MHz (Fall) (setup and hold)
+    Warning: From clk25MHz (Rise) to clk50MHz (Rise) (setup and hold)
+    Warning: From clk25MHz (Fall) to clk50MHz (Rise) (setup and hold)
+    Warning: From clk50MHz (Rise) to clk50MHz (Rise) (setup and hold)
+    Warning: From receiver:i_receiver|receive_flag (Rise) to clk50MHz (Rise) (setup and hold)
+    Warning: From receiver:i_receiver|receive_flag (Fall) to clk50MHz (Rise) (setup and hold)
+    Warning: From VGA:vga1|clk2 (Rise) to VGA:vga1|clk2 (Rise) (setup and hold)
+    Warning: From VGA:vga1|clk2 (Fall) to VGA:vga1|clk2 (Rise) (setup and hold)
+    Warning: From VGA:vga1|clk1 (Rise) to VGA:vga1|clk2 (Rise) (setup and hold)
+    Warning: From XIHAO:xihao1|CounterY1[0] (Fall) to VGA:vga1|clk2 (Rise) (setup and hold)
+    Warning: From VGA:vga1|clk2 (Rise) to VGA:vga1|clk2 (Fall) (setup and hold)
+    Warning: From VGA:vga1|clk2 (Fall) to VGA:vga1|clk2 (Fall) (setup and hold)
+    Warning: From VGA:vga1|clk1 (Rise) to VGA:vga1|clk2 (Fall) (setup and hold)
+    Warning: From clk25MHz (Rise) to VGA:vga1|clk1 (Rise) (setup and hold)
+    Warning: From VGA:vga1|clk2 (Rise) to VGA:vga1|clk1 (Rise) (setup and hold)
+    Warning: From VGA:vga1|clk2 (Fall) to VGA:vga1|clk1 (Rise) (setup and hold)
+    Warning: From VGA:vga1|clk1 (Rise) to VGA:vga1|clk1 (Rise) (setup and hold)
+    Warning: From VGA:vga1|clk1 (Fall) to VGA:vga1|clk1 (Rise) (setup and hold)
+    Warning: From clk25MHz (Rise) to VGA:vga1|clk1 (Fall) (setup and hold)
+    Warning: From VGA:vga1|clk1 (Rise) to VGA:vga1|clk1 (Fall) (setup and hold)
+    Warning: From VGA:vga1|clk1 (Fall) to VGA:vga1|clk1 (Fall) (setup and hold)
+    Warning: From clk25MHz (Rise) to XIHAO:xihao1|CounterY1[0] (Rise) (setup and hold)
+    Warning: From XIHAO:xihao1|CounterY1[0] (Rise) to XIHAO:xihao1|CounterY1[0] (Rise) (setup and hold)
+    Warning: From XIHAO:xihao1|CounterY1[0] (Fall) to XIHAO:xihao1|CounterY1[0] (Rise) (setup and hold)
+    Warning: From clk25MHz (Rise) to XIHAO:xihao1|CounterY1[0] (Fall) (setup and hold)
+    Warning: From XIHAO:xihao1|CounterY1[0] (Rise) to XIHAO:xihao1|CounterY1[0] (Fall) (setup and hold)
+    Warning: From XIHAO:xihao1|CounterY1[0] (Fall) to XIHAO:xihao1|CounterY1[0] (Fall) (setup and hold)
+    Warning: From receiver:i_receiver|receive_flag (Rise) to XIHAO:xihao1|CounterY1[0] (Fall) (setup and hold)
+    Warning: From clk50MHz (Rise) to receiver:i_receiver|receive_flag (Rise) (setup and hold)
+    Warning: From receiver:i_receiver|receive_flag (Rise) to receiver:i_receiver|receive_flag (Rise) (setup and hold)
+    Warning: From receiver:i_receiver|receive_flag (Fall) to receiver:i_receiver|receive_flag (Rise) (setup and hold)
+    Warning: From clk50MHz (Rise) to receiver:i_receiver|receive_flag (Fall) (setup and hold)
+    Warning: From receiver:i_receiver|receive_flag (Rise) to receiver:i_receiver|receive_flag (Fall) (setup and hold)
+    Warning: From receiver:i_receiver|receive_flag (Fall) to receiver:i_receiver|receive_flag (Fall) (setup and hold)
+Critical Warning: Timing requirements not met
+Info: Worst-case setup slack is -3.025
+    Info:     Slack End Point TNS Clock 
+    Info: ========= ============= =====================
+    Info:    -3.025      -118.912 clk25MHz 
+    Info:    -2.086       -19.854 VGA:vga1|clk2 
+    Info:    -1.375       -10.972 vga640480:i_vga640480|vcnt[1] 
+    Info:    -1.119        -7.254 receiver:i_receiver|receive_flag 
+    Info:    -0.299        -0.299 XIHAO:xihao1|CounterY1[0] 
+    Info:    -0.241        -0.551 VGA:vga1|clk1 
+    Info:    -0.210        -1.740 clk50MHz 
+Info: Worst-case hold slack is -0.562
+    Info:     Slack End Point TNS Clock 
+    Info: ========= ============= =====================
+    Info:    -0.562        -7.497 clk25MHz 
+    Info:    -0.332        -3.620 clk50MHz 
+    Info:    -0.318        -0.318 VGA:vga1|clk1 
+    Info:    -0.050        -0.151 vga640480:i_vga640480|vcnt[1] 
+    Info:     0.138         0.000 XIHAO:xihao1|CounterY1[0] 
+    Info:     0.312         0.000 VGA:vga1|clk2 
+    Info:     0.396         0.000 receiver:i_receiver|receive_flag 
+Info: No recovery paths to report
+Info: No removal paths to report
+Critical Warning: Found minimum pulse width or period violations. See Report Minimum Pulse Width for details.
+Info: Design is not fully constrained for setup requirements
+Info: Design is not fully constrained for hold requirements
+Info: Parallel compilation was enabled and used an average of 2.0 processors and a maximum of 4 processors out of 4 processors allowed
+    Info: 33% of process time was spent using 4 processors
+    Info: 67% of process time was spent using 1 processor
+Info: Quartus II TimeQuest Timing Analyzer was successful. 0 errors, 176 warnings
+    Info: Peak virtual memory: 315 megabytes
+    Info: Processing ended: Sat Sep 21 10:06:20 2019
+    Info: Elapsed time: 00:00:03
+    Info: Total CPU time (on all processors): 00:00:03
+
+

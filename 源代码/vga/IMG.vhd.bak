@@ -1,0 +1,292 @@
+LIBRARY ieee;
+USE ieee.std_logic_1164.all; 
+use ieee.std_logic_unsigned.all;
+ENTITY img IS port(
+	P1  : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
+	clk50MHz :  IN  STD_LOGIC;
+	clk12MHz :  IN  STD_LOGIC;
+
+	hs1 :  OUT  STD_LOGIC;
+	vs1 :  OUT  STD_LOGIC;
+	r1 :  OUT  STD_LOGIC;
+	g1 :  OUT  STD_LOGIC;
+	b1 :  OUT  STD_LOGIC;
+
+    MD1 :  IN STD_LOGIC; --控制彩条模式
+    MS :  IN STD_LOGIC; --选择color或rom
+    FANGDA : IN STD_LOGIC; --一倍放大
+    MODE : IN STD_LOGIC ;  --旋转图片
+    key_clk : in std_logic;
+    key_data : in std_logic);
+END img;
+
+ARCHITECTURE modelstru OF img IS 
+
+------------component---------------------
+
+component COLOR PORT (
+	CLK, MD : IN STD_LOGIC;
+    HS, VS, R, G, B : OUT STD_LOGIC  
+    ); 
+end component;
+
+component vga640480 PORT(
+		clk : IN STD_LOGIC;
+		rgbin : IN STD_LOGIC_VECTOR(2 downto 0);
+		hs : OUT STD_LOGIC;
+		vs : OUT STD_LOGIC;
+		r : OUT STD_LOGIC;
+		g : OUT STD_LOGIC;
+		b : OUT STD_LOGIC;
+		hcntout : OUT STD_LOGIC_VECTOR(9 downto 0);
+		vcntout : OUT STD_LOGIC_VECTOR(9 downto 0)
+		);
+end component;
+
+component hfut PORT(
+	clock : IN STD_LOGIC;
+	address : IN STD_LOGIC_VECTOR(13 downto 0);
+	q : OUT STD_LOGIC_VECTOR(2 downto 0)	
+	);
+end component;
+
+component mid  port (
+	clk : in std_logic;--!
+	fangda_temp : in std_logic;--!
+	mode : in std_logic_vector(1 downto 0);--key按键输入旋转90度信号，下降沿有效
+	qin : in std_logic_vector(2 downto 0); 
+	xx: in std_logic_vector(9 downto 0);--!
+	yy: in std_logic_vector(9 downto 0);--!
+	hcntin : in std_logic_vector(9 downto 0);--!
+	vcntin : in std_logic_vector(9 downto 0);--!
+	qout : out std_logic_vector(2 downto 0);--!
+	romaddr_control : out std_logic_vector(13 downto 0)--!
+	); 
+end component;
+
+component receiver is port (
+	clock0: in std_logic;
+	key_clk :in std_logic;--键盘数据时钟
+	key_data : in std_logic;--键盘数据信号
+	key_code : out std_logic_vector(7 downto 0)--接收键盘数据的标志码
+	);
+end component;
+
+component main_entity is port(
+	clk50MHz:in std_logic;
+	change:in std_logic_vector(1 downto 0);
+	temp_wren :in std_logic;
+	frequence : in std_logic;
+	
+	hs :  OUT  STD_LOGIC;
+	vs :  OUT  STD_LOGIC;
+	r :  OUT  STD_LOGIC;
+	g :  OUT  STD_LOGIC;
+	b :  OUT  STD_LOGIC
+);
+end component;
+
+------------end component--------------------------
+
+-----------rom signal--------------------
+
+SIGNAL  hs :   STD_LOGIC;
+SIGNAL 	vs :   STD_LOGIC;
+SIGNAL  r  :   STD_LOGIC;
+SIGNAL  g  :   STD_LOGIC;
+SIGNAL	b  :   STD_LOGIC;
+
+-----------ram signal--------------------
+
+SIGNAL  hs2 :   STD_LOGIC;
+SIGNAL 	vs2 :   STD_LOGIC;
+SIGNAL  r2  :   STD_LOGIC;
+SIGNAL  g2  :   STD_LOGIC;
+SIGNAL	b2  :   STD_LOGIC;
+signal changesignal : STD_LOGIC_VECTOR(1 downto 0);
+signal ramwren : STD_LOGIC;
+
+signal fre : std_logic;
+
+----------color signal-------------------
+
+SIGNAL  hs0 :   STD_LOGIC;
+SIGNAL 	vs0 :   STD_LOGIC;
+SIGNAL  r0  :   STD_LOGIC;
+SIGNAL  g0  :   STD_LOGIC;
+SIGNAL	b0  :   STD_LOGIC;
+ 
+signal	rgb :  STD_LOGIC_VECTOR(2 downto 0);
+signal	clk25MHz : std_logic;
+signal	romaddr :  STD_LOGIC_VECTOR(13 downto 0);
+signal	hpos	:  std_logic_vector(9 downto 0);
+signal	vpos	:  std_logic_vector(9 downto 0);
+
+signal touchedX : std_logic;
+signal touchedY : std_logic;
+
+
+----------------signal-------------------------
+signal mode1 : std_logic_vector(1 downto 0);
+signal rgb1 : std_logic_vector(2 downto 0);
+signal ttxx,ttyy : std_logic_vector(9 downto 0);
+
+signal ms1 : std_logic_vector(1 downto 0);
+
+---------------key signal---------------------
+
+signal key_code : std_logic_vector( 7 downto 0);
+signal key_flag : std_logic_vector(7 downto 0);
+----------------signal-------------------------
+BEGIN 
+----------------process-------------------------
+
+process(MS)
+begin
+	if(MS'event and MS = '1') then
+		if(ms1 = "10") then
+			ms1 <= "00";
+		else
+			ms1 <= ms1 +1;
+		end if;
+	end if;
+end process;
+
+PROCESS (ms1)
+   BEGIN 
+     CASE ms1 IS
+     WHEN "00" =>  hs1<=hs ; vs1<=vs ; r1<=r ; g1<=g ; b1<=b; 
+     WHEN "01" =>  hs1<=hs0 ; vs1<=vs0 ; r1<=r0 ; g1<=g0 ; b1<=b0;
+     WHEN "10" =>  hs1<=hs2 ; vs1<=vs2 ; r1<=r2 ; g1<=g2 ; b1<=b2;
+     WHEN OTHERS => NULL;
+     END CASE;
+END PROCESS;
+
+process(clk50MHz) begin
+	if clk50MHz'event and clk50MHz = '1' then
+		clk25MHz <= not clk25MHz;
+	end if;
+end process;
+
+
+process(MODE)
+begin
+	if MODE'EVENT and MODE = '0' then
+		if mode1 = "11" then mode1 <= "00";
+			else mode1 <= mode1+1;
+		end if;
+	end if;
+end process;
+
+process(vs)
+begin	
+	if vs = '0' then
+		if (touchedX = '0') then
+			ttxx <= ttxx + 1;
+		else
+			ttxx <= ttxx - 1;
+		end if;
+		if (touchedY = '0') then
+			ttyy <= ttyy + 1;
+		else
+			ttyy <= ttyy - 1;
+		end if;
+	end if;
+end process;
+
+process(vs)
+begin
+	if(vs = '0') then
+		if(ttxx<=2) then
+			touchedX <= '0';
+		elsif(ttxx>=720-30-98) then
+			touchedX <= '1';
+		end if;
+		if(ttyy<=2) then
+			touchedY <= '0';
+		elsif(ttyy>=400-30-30) then
+			touchedY <= '1';
+		end if;
+	end if;
+end process;
+
+process(vs2)
+begin
+	if(vs2 = '0') then
+		case key_code is
+			when "01010001" => --Q
+				ramwren <= '1';
+			when "01000101" => --E
+				ramwren <= '0';
+			when "01010010" => --R
+				changesignal <= "00";
+			when "01010100" => --T
+				changesignal <= "01";
+			when "01011001" => --Y
+				changesignal <= "10";
+			when "01010101" => --U
+				changesignal <= "11";
+			when "01010000" => --P
+				fre <= '1';
+			when "01001100" => --L
+				fre <= '0';
+			when others => NULL;
+		end case;
+	end if;
+end process;
+
+----------------process-------------------------
+i_vga640480 : vga640480
+PORT MAP(clk => clk25MHz,
+		 rgbin => rgb1,
+		 hs => hs,
+		 vs => vs,
+		 r => r,
+		 g => g,
+		 b => b,
+		 hcntout => hpos,
+		 vcntout => vpos);
+
+i_rom : hfut
+PORT MAP(clock => clk25MHz,
+		 address => romaddr,
+		 q => rgb);
+		 
+UU : COLOR PORT MAP(clk => clk12MHz, MD => MD1 , HS => hs0 , VS => vs0 , R => r0 , G => g0 , B => b0 );
+
+i_mid : mid
+PORT MAP(	clk => clk25MHz,
+	fangda_temp => FANGDA,
+	mode => mode1,
+	qin =>rgb,
+	xx => ttxx,--no 
+	yy => ttyy, 
+	hcntin => hpos,
+	vcntin => vpos,
+	qout => rgb1,
+	romaddr_control =>romaddr
+); 
+
+P1<= "11101100" ;
+i_receiver : receiver
+PORT MAP (
+	clock0 => clk50MHz,
+	key_clk => key_clk,
+	key_data => key_data,
+	key_code => key_code
+);
+
+i_main_entity : main_entity port map(
+	clk50MHz => clk50MHz,
+	change => changesignal,
+	temp_wren => ramwren,
+	frequence => fre,
+	
+	hs => hs2,
+	vs => vs2,
+	r => r2,
+	g => g2,
+	b => b2
+);
+
+END; 

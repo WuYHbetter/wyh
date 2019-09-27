@@ -1,0 +1,115 @@
+LIBRARY ieee;
+USE ieee.std_logic_1164.all; 
+use ieee.std_logic_unsigned.all;
+use ieee.std_logic_arith.all;
+
+entity receiver is
+	port (clock0: in std_logic;
+			key_clk :in std_logic;--键盘数据时钟
+			key_data : in std_logic;--键盘数据信号
+			key_code : out std_logic_vector(7 downto 0)--接收键盘数据的标志码
+			);
+end receiver;
+
+architecture behavioral of receiver is
+
+signal receive_flag : std_logic;--接受数据标志
+signal key_clk_filter : std_logic_vector(7 downto 0);--缓存键盘时钟信号
+signal key_clk_f , key_clk_f_old , key_clk_falling : std_logic;--用于滤波键盘时钟信号噪声
+signal bit_count : std_logic_vector(3 downto 0);--设置接收串行数据位计数器
+signal rec_shift_reg : std_logic_vector(8 downto 0);--接收键盘发送的数据缓存
+signal rec_bit : std_logic_vector(7 downto 0);--接收键盘发送的数据缓存
+begin
+--连续保存键盘时钟信号
+process(clock0)
+  begin
+    if rising_edge(clock0) then
+      key_clk_filter(7 downto 1)<=key_clk_filter(6 downto 0);
+      key_clk_filter(0)<=key_clk;
+    end if;
+  end process;
+  
+--得到稳定的键盘时钟信号   
+process(clock0)
+  begin
+    if rising_edge(clock0) then
+      if key_clk_filter="11111111" then
+        key_clk_f<='1';
+      elsif key_clk_filter="00000000"then
+        key_clk_f<='0';
+      end if;
+    end if;
+end process;
+
+--保存稳定的键盘时钟信号
+process(clock0)
+  begin
+    if rising_edge(clock0)then
+      key_clk_f_old<=key_clk_f;
+    end if;
+end process;
+
+key_clk_falling<=key_clk_f_old and not key_clk_f;---------key up
+  
+--判断起始位，如果receive_flag为1则开始接受数据，根据发送键盘扫描编码的时许，先发送第一位数据，因此每接受一位数据后进行右位移操作。
+process(clock0)
+  begin
+    if rising_edge(clock0) then
+      if key_clk_falling='1' then
+        if((receive_flag='0') and (key_data = '0'))then
+          receive_flag<='1';
+        else
+          if(receive_flag='1')then
+            if(bit_count="1001")then
+              receive_flag<='0';
+              bit_count<="0000";
+            else
+              rec_shift_reg<=(key_data&rec_shift_reg(8 downto 1));
+              bit_count<=bit_count+1;
+            end if;
+          end if;
+        end if;
+      end if;
+    
+    end if;
+    rec_bit<=rec_shift_reg(7 downto 0);
+end process;
+
+--将键盘发出数据转换成对应的显示屏显示字符编码数据
+process(receive_flag,rec_bit)
+  begin
+    if receive_flag='0' then
+      case rec_bit is
+		when "00010110"=>key_code<="00110001";--1
+		when "00011110"=>key_code<="00110010";--1
+        when "00011100"=>key_code<="01000001";--A
+        when "00110010"=>key_code<="01000010";
+        when "00100001"=>key_code<="01000011";
+        when "00100011"=>key_code<="01000100";--D
+        when "00100100"=>key_code<="01000101";
+        when "00101011"=>key_code<="01000110";
+        when "00110100"=>key_code<="01000111";--G
+        when "00110011"=>key_code<="01001000";
+        when "01000011"=>key_code<="01001001";--I
+        when "00111011"=>key_code<="01001010";--J
+        when "01000010"=>key_code<="01001011";--K
+        when "01001011"=>key_code<="01001100";--L
+        when "00111010"=>key_code<="01001101";
+        when "00110001"=>key_code<="01001110";
+        when "01000100"=>key_code<="01001111";--O
+        when "01001101"=>key_code<="01010000";
+        when "00010101"=>key_code<="01010001";
+        when "00101101"=>key_code<="01010010";
+        when "00011011"=>key_code<="01010011";--S
+        when "00101100"=>key_code<="01010100";
+        when "00111100"=>key_code<="01010101";
+        when "00101010"=>key_code<="01010110";
+        when "00011101"=>key_code<="01010111";--W
+        when "00100010"=>key_code<="01011000";
+        when "00110101"=>key_code<="01011001";
+        when "00011010"=>key_code<="01011010";
+        when others=>key_code<="00111111";--?
+      end case;
+    end if;
+  end process;
+end;

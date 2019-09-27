@@ -1,0 +1,16 @@
+Fitter Status : Successful - Mon Sep 09 14:28:22 2019
+Quartus II Version : 8.1 Build 163 10/28/2008 SJ Full Version
+Revision Name : vga
+Top-level Entity Name : img
+Family : Cyclone III
+Device : EP3C40Q240C8
+Timing Models : Final
+Total logic elements : 742 / 39,600 ( 2 % )
+    Total combinational functions : 718 / 39,600 ( 2 % )
+    Dedicated logic registers : 188 / 39,600 ( < 1 % )
+Total registers : 188
+Total pins : 21 / 129 ( 16 % )
+Total virtual pins : 0
+Total memory bits : 61,952 / 1,161,216 ( 5 % )
+Embedded Multiplier 9-bit elements : 0 / 252 ( 0 % )
+Total PLLs : 0 / 4 ( 0 % )

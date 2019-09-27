@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Sat Sep 21 10:06:01 2019
+Quartus II Version : 8.1 Build 163 10/28/2008 SJ Full Version
+Revision Name : game
+Top-level Entity Name : game
+Family : Cyclone III
+Total logic elements : 533
+    Total combinational functions : 533
+    Dedicated logic registers : 165
+Total registers : 165
+Total pins : 9
+Total virtual pins : 0
+Total memory bits : 442,368
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0

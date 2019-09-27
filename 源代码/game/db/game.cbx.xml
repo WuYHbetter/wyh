@@ -1,0 +1,8 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="game">
+		<CBX_INST_ENTRY INSTANCE_NAME="|game|VGA:vga1|over:rom|altsyncram:altsyncram_component" CBX_FILE_NAME="altsyncram_9591.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|game|over:i_over|altsyncram:altsyncram_component" CBX_FILE_NAME="altsyncram_9591.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|game|timg:i_timg|altsyncram:altsyncram_component" CBX_FILE_NAME="altsyncram_p491.tdf"/>
+	</PROJECT>
+</LOG_ROOT>
